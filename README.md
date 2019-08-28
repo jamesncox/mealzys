@@ -65,3 +65,7 @@ fields_for @recipe.ingredients.build do |f|
 
     f.checkbox "title", Ingredient.all
     f.select_tag "quantity", options_from_collection_for_select(ingredient, "quantity","quantity")
+
+FLESH OUT THE APP:
+
+1.
