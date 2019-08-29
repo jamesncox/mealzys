@@ -6,14 +6,10 @@ class User < ApplicationRecord
 
     validates :password, :presence => true,
                        :confirmation => true,
-                       :length => { minimum: 6 },
-                       :unless => :already_has_password?
+                       :length => { minimum: 6 }
 
     has_secure_password
 
     private
 
-    def already_has_password?
-      !self.password_digest.blank?
-    end
 end
