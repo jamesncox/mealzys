@@ -1,4 +1,10 @@
+
 <%= form_for @user, controller: 'users', action: 'create' do |f| %>
+  <% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |msg| %>
+      <h3><% msg %></h3>
+    <% end %>
+  <% end %>
   <%= f.label :name, 'Username:' %>
   <%= f.text_field :name %><br>
 
