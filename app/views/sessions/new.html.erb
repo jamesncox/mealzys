@@ -1,14 +1,16 @@
-<h2>Log in or sign up to manage your recipes and clients!</h1>
-<%= form_for @user, url: login_path, method: :post do |f| %>
-  <%= f.label :name, 'Username:' %>
-  <%= f.text_field :name %><br>
 
-  <%= f.label :password, 'Password:' %>
-  <%= f.password_field :password %><br>
-
-  <%= f.submit "Log In" %> 
-  <br>
-  <br>
-  If you do not have an account, please clink the link below to signup:
-  <br><%= link_to(controller: 'users', action: 'new') { button_to "Sign Up" } %>
+<p id=”alert”><%= alert %></p>
+<h1>Login</h1>
+<%= form_tag login_path do |form| %>
+  <div class=”field”>
+    <%= label_tag :email %>
+    <%= text_field_tag :email %>
+  </div>
+  <div class=”field”>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+  </div>
+  <div class=”actions”>
+    <%= submit_tag :login %>
+  </div>
 <% end %>
