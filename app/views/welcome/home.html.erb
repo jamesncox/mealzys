@@ -1,4 +1,28 @@
 <h1>Hi, <%= @user.name %></h1>
-<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+
+<section class="todoapp">
+
+	<section class="main" style="display: block;">
+		<ul class="todo-list">
+            <li data-id="1564063687532" class="">
+                <div class="view">
+                    <label>Add a Client</label>
+                </div>
+                <div class="view">
+                    <label>Create a Recipe</label>
+                </div>
+                <div class="view">
+                    <label>View All Your Recipes</label>
+                </div>
+                <div class="view">
+                    <label>View All Your Clients</label>
+                </div>
+            </li>
+        </ul>
+	</section>
+
+</section>
+
+  <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
   <input type=submit value='logout'>
 <% end %>

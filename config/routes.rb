@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :recipes
   resources :clients
   resources :users
-  get 'site/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get '/login' => 'sessions#new'
@@ -13,6 +12,4 @@ Rails.application.routes.draw do
   post '/logout' => 'sessions#destroy'
 
   root 'welcome#home'
-
-  # root 'site#index'
 end

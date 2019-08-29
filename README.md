@@ -69,3 +69,14 @@ fields_for @recipe.ingredients.build do |f|
 FLESH OUT THE APP:
 
 1.
+
+
+DO THIS LAST:
+Add a risks or category, tags essentially, dairy, shellfish, gluten, red meat, to the recipe_ingredients model, and make that a nested form, 
+
+
+Nest inside either the ingredient or recipe form.
+
+FOR EVALUATION:
+
+Look over form_tag syntax for login
