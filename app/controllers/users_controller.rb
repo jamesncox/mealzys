@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     def create
       #fix this method to reflect similar sinatra syntax with conditional etc..
       @user = User.create(user_params)
+        if
       render controller: 'users', action: 'new' unless @user.save
       session[:user_id] = @user.id
       redirect_to controller: 'welcome', action: 'home'
