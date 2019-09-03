@@ -29,6 +29,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'pry'
 
+gem 'omniauth'
+gem 'omniauth-twitter'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
