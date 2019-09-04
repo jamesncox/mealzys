@@ -2,7 +2,6 @@ class RecipesController < ApplicationController
 
     def show
         @recipe = Recipe.find(params[:id])
-        binding.pry
     end 
 
     def index
@@ -12,13 +11,11 @@ class RecipesController < ApplicationController
     def new 
         @recipe = Recipe.new
         10.times { @recipe.ingredients.build }
-        #line 13 is not ideal from what it sounds like even though it appears to work, ask DJ about it.
     end
 
     def create
-    
         @recipe = Recipe.new (recipe_params)
-        binding.pry
+
         if @recipe.save 
             redirect_to @recipe
         else
@@ -37,11 +34,10 @@ class RecipesController < ApplicationController
     private
         # nested form lab, adding ingredients attributes to recipe_params
         def recipe_params
-            params.require(:recipe).permit(:name, :serves, :sauce, :garnish, :instructions, :user_id,
+            params.require(:recipe).permit(:name, :serves, :instructions, :user_id,
                 ingredients_attributes: [
                     :name, 
                     :quantity,
-                    :size,
                     :unit
                 ]
             )

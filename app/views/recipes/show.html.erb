@@ -3,8 +3,9 @@
 <%= @recipe.serves %>
 <%= @recipe.instructions %>
  <% @recipe.ingredients.each do |ingredient| %>
-      <%= ingredient.name %><br>
-
+      <%= ingredient.name %>
+      <%= ingredient.quantity %>
+      <%= ingredient.unit %>
     <% end %>
 
 <%# create_table "recipes", force: :cascade do |t|

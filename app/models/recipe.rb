@@ -14,7 +14,6 @@ class Recipe < ApplicationRecord
     def ingredients_attributes=(ingredients_attributes)
         ingredients_attributes.map do |attr|
             attr.each do |ingred|
-                binding.pry
                 self.ingredients << Ingredient.find_or_create_by(name: ingred["name"]) unless ingred["name"].blank?
             end 
         end 
