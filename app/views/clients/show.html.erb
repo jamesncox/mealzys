@@ -1,5 +1,7 @@
 <%= @client.name %>
 <br>
+<%= button_to "Edit #{@client.name}", edit_client_path, :method => "get" %>
+<br>
 <%= button_to "Add another client", new_client_path, :method => "get" %>
 <br>
 <%= button_to "Homepage", root_path, :method => "get" %>
