@@ -25,6 +25,12 @@ class ClientsController < ApplicationController
         @client = Client.find(params[:id])
     end
 
+    def update
+        @client = Client.find(params[:id])
+        @client.update(client_params)
+        redirect_to client_path(@client)
+    end 
+
     def delete
     end 
 
