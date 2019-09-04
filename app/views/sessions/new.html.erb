@@ -13,6 +13,6 @@
   <div class=”actions”>
     <%= submit_tag :login %>
   </div>
-<% end %><br>
-<p>Or</p><br>
-<%= link_to "Click Here to Signup", new_user_path %>
+<% end %>
+Or<br>
+<%= button_to "New User Signup", new_user_path, :method => "get" %>
