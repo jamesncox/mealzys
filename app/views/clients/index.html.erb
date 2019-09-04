@@ -2,6 +2,8 @@
 
 <% @clients.each do |client| %>
     <ul>
-    <%= client.name %>
+    <%= link_to client.name, "clients/#{client.id}" %>
     </ul>
 <% end %>
+
+<%= button_to "Homepage", root_path, :method => "get" %>
