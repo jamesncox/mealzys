@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
 
     def new 
         @recipe = Recipe.new
-        5.times { @recipe.ingredients.build }
+        10.times { @recipe.ingredients.build }
         #line 13 is not ideal from what it sounds like even though it appears to work, ask DJ about it.
     end
 
