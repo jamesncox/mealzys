@@ -13,7 +13,7 @@
     <%= f.fields_for :ingredients do |i|  %>
     <%# figure out how to incorporate option for adding however many ingredients %>
        
-       <%= i.label :name, "Ingredient" %>
+       <%= i.label :name, "Ingredient: " %>
        <%= i.text_field :name %>
 
        <%= i.label :quantity, "Quantity: " %>
@@ -29,3 +29,4 @@
     <%= f.submit %>
 <% end %>
 
+<p><%= button_to "Homepage", root_path, :method => "get" %></p>

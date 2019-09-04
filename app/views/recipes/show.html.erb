@@ -4,10 +4,12 @@
 
 <P><h3>Ingredients | Quantity | Unit Type</h3></P>
 
-  <% @recipe.ingredients.each do |ingredient| %>
-      <p><%= ingredient.name %> |
-      <%= ingredient.quantity %> |
-      <%= ingredient.unit %></p>
+  <% @recipe.ingredients.each do |attr| %>
+      <p><%= attr.name %> |
+      <%= attr.quantity %> |
+      <%= attr.unit %></p>
   <% end %>
 
 <p><%= @recipe.instructions %></p>
+
+<%= button_to "Homepage", root_path, :method => "get" %>
