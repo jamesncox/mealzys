@@ -3,8 +3,8 @@
 <h1>Login</h1>
 <%= form_tag login_path do |form| %>
   <div class=”field”>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
+    <%= label_tag :name %>
+    <%= text_field_tag :name %>
   </div>
   <div class=”field”>
     <%= label_tag :password %>
@@ -13,4 +13,6 @@
   <div class=”actions”>
     <%= submit_tag :login %>
   </div>
-<% end %>
+<% end %><br>
+<p>Or</p><br>
+<%= link_to "Click Here to Signup", new_user_path %>

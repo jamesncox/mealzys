@@ -3,7 +3,7 @@
 
   <% if @user.errors.any? %>
     <% @user.errors.full_messages.each do |msg| %>
-      <h3><% msg %></h3>
+      <h3><%= msg %></h3>
     <% end %>
   <% end %>
 

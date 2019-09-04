@@ -3,12 +3,13 @@ class SessionsController < ApplicationController
     end
   
     def create
-      user = User.find_by(name: params[:user][:name])
-      user = user.authenticate(params[:user][:password])
-      redirect_to(controller: 'sessions', action: 'new') unless user
-      session[:user_id] = user.id
-      @user = user
-      redirect_to controller: 'welcome', action: 'home'
+      @user = User.find_by(name: params[:name])
+      if @user && @user.authenticate(params[:password])
+        session[:user_id] = @user.id
+        redirect_to root_path
+      else
+        render new_user_path
+      end
     end
   
     def destroy
