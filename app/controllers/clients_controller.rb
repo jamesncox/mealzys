@@ -12,8 +12,13 @@ class ClientsController < ApplicationController
     end
 
     def create
-        @client = Client.create(client_params)
-        redirect_to client_path
+        @client = Client.new(client_params)
+
+        if @client.save
+            redirect_to @client
+        else 
+            render :new 
+        end
     end 
 
     def edit
@@ -24,7 +29,7 @@ class ClientsController < ApplicationController
 
     private
         def client_params
-            params.require[:client].permit[:name]
+            params.require(:client).permit(:name)
         end
 
 end

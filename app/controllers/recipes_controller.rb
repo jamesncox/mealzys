@@ -15,8 +15,13 @@ class RecipesController < ApplicationController
     end
 
     def create
-        @recipe = Recipe.create(recipe_params)
-        redirect_to recipe_path
+        @recipe = Recipe.new (recipe_params)
+
+        if @recipe.save 
+            redirect_to @recipe
+        else
+            render :new
+        end
     end
 
     def edit 
