@@ -6,16 +6,16 @@
 		<ul class="todo-list">
             <li data-id="1564063687532" class="">
                 <div class="view">
-                    <label>Add a Client</label>
+                    <label><%= link_to "Create a Client", new_client_path %></label>
+                </div>
+                <div class="view">
+                    <label><%= link_to "View All Your Clients", clients_path %></label>
                 </div>
                 <div class="view">
                     <label><%= link_to "Create a Recipe", new_recipe_path %><label>
                 </div>
                 <div class="view">
-                    <label>View All Your Recipes</label>
-                </div>
-                <div class="view">
-                    <label>View All Your Clients</label>
+                    <label><%= link_to "View All Your Recipes", recipes_path %></label>
                 </div>
             </li>
         </ul>
