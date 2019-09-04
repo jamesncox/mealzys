@@ -110,3 +110,34 @@ Add Ingredients:
   <%= f.submit "Submit" %>
 
 <% end %>
+
+
+Name: Salmon Cakes
+Serving size: 8 people
+
+Ingredients: 
+1. Salmon, 8 4oz filets
+2. Panko bread crumbs, 8 oz
+3. Green bell pepper
+
+
+
+def self.find_by(id)
+  self.where(id) 
+end 
+
+scope :find_by(id), -> {where(id)}
+
+
+#recipes scope
+def self.has_restriction(name)
+  where(restriction: "#{name}")
+end # return all recipes with name as a restriction would need to be a form, i'd use form tag  
+
+
+
+Get rid of attributes:
+
+ingredients "size"
+
+recipe "sauce", "garnish"

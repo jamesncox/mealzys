@@ -1,8 +1,6 @@
 <% @recipes.each do |recipe| %>
     <%= recipe.name %><br>
     <%= recipe.serves %><br>
-    <%= recipe.sauce %><br>
-    <%= recipe.garnish %><br>
     <%= recipe.instructions %><br>
 
     <% recipe.ingredients.each do |ingredient| %>

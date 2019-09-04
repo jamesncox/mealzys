@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
 
     def show
         @recipe = Recipe.find(params[:id])
+        binding.pry
     end 
 
     def index
@@ -10,14 +11,14 @@ class RecipesController < ApplicationController
 
     def new 
         @recipe = Recipe.new
-        @recipe.ingredients.build
+        5.times { @recipe.ingredients.build }
         #line 13 is not ideal from what it sounds like even though it appears to work, ask DJ about it.
     end
 
     def create
     
         @recipe = Recipe.new (recipe_params)
-        
+        binding.pry
         if @recipe.save 
             redirect_to @recipe
         else

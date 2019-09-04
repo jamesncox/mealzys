@@ -10,45 +10,22 @@
     <%= f.number_field :serves %><br>
 
     <%# line 36 needs the .build method DJ said to use (instead of controller, I assume) %>
-    <% 5.times do |ing| %>
-    <%= f.fields_for :ingredients do |i| %>
+    <%= f.fields_for :ingredients do |i|  %>
     <%# figure out how to incorporate option for adding however many ingredients %>
        
-       <%= i.label :name, "Ingredient #{ing+1}: " %>
+       <%= i.label :name, "Ingredient" %>
        <%= i.text_field :name %><br>
 
        <%= i.label :quantity, "Quantity: " %>
        <%= i.text_field :quantity %><br>
-       
-       <%= i.label :size, "Size: " %>
-       <%= i.text_field :size %><br>
        
        <%= i.label :unit, "Unit: " %>
        <%= i.text_field :unit %><br>
 
 
     <% end %>
-    <% end %>
+    <br>
 
     <%= f.submit %>
 <% end %>
 
-<%# create_table "recipes", force: :cascade do |t|
-    t.string "name"
-    t.integer "serves"
-    t.string "sauce"
-    t.string "garnish"
-    t.text "instructions"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
-  end %>
-
-  <%# create_table "ingredients", force: :cascade do |t|
-    t.string "name"
-    t.string "quantity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "size"
-    t.string "unit"
-  end %>

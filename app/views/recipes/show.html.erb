@@ -1,8 +1,6 @@
 <h2><%= @recipe.name %></h2><br>
 
 <%= @recipe.serves %>
-<%= @recipe.sauce %>
-<%= @recipe.garnish %>
 <%= @recipe.instructions %>
  <% @recipe.ingredients.each do |ingredient| %>
       <%= ingredient.name %><br>
