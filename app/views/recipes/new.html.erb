@@ -7,7 +7,7 @@
     <%= f.label :serves, "Serving Size: "%>
     <%= f.number_field :serves %><br>
 
-    <%# line 11 needs the .build method DJ said to use instead of controller I assume %>
+    <%# line 11 needs the .build method DJ said to use (instead of controller, I assume) %>
     <%= f.fields_for :ingredients do |i| %>
     <%# figure out how to incorporate option for adding however many ingredients %>
        <%= i.label :name, "Ingredient: " %>
