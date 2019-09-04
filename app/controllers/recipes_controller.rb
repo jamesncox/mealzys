@@ -16,7 +16,7 @@ class RecipesController < ApplicationController
 
     def create
         @recipe = Recipe.create(recipe_params)
-        redirect_to recipe 
+        redirect_to recipe_path
     end
 
     def edit 
@@ -40,11 +40,3 @@ class RecipesController < ApplicationController
             )
         end
 end
-# create_table "ingredients", force: :cascade do |t|
-#     t.string "name"
-#     t.string "quantity"
-#     t.datetime "created_at", null: false
-#     t.datetime "updated_at", null: false
-#     t.integer "size"
-#     t.string "unit"
-#   end
