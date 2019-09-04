@@ -1,7 +1,9 @@
 <h2><%= @recipe.name %></h2>
 
 <p><label>Serves: </label><%= @recipe.serves %></p>
+
 <P><h3>Ingredients | Quantity | Unit Type</h3></P>
+
   <% @recipe.ingredients.each do |ingredient| %>
       <p><%= ingredient.name %> |
       <%= ingredient.quantity %> |
