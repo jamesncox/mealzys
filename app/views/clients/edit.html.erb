@@ -1,3 +1,5 @@
 EDIT CLIENT
 
  <%= render partial: 'clients/form'%>
+
+<%= button_to "Delete #{@client.name}", client_path, :method => "delete" %>

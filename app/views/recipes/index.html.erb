@@ -1,13 +1,14 @@
 <% @recipes.each do |recipe| %>
-    <%= recipe.name %>
-    <%= recipe.serves %>
-    <%= recipe.sauce %>
-    <%= recipe.garnish %>
-    <%= recipe.instructions %>
-    <%= recipe.ingredients.name %>
-    <%= recipe.ingredients.quantity %>
-    <%= recipe.ingredients.size %>
-    <%= recipe.ingredients.unit %>
+    <%= recipe.name %><br>
+    <%= recipe.serves %><br>
+    <%= recipe.sauce %><br>
+    <%= recipe.garnish %><br>
+    <%= recipe.instructions %><br>
+
+    <% recipe.ingredients.each do |ingredient| %>
+      <%= ingredient.name %><br>
+
+    <% end %>
 <% end %>
 
 <%# create_table "recipes", force: :cascade do |t|

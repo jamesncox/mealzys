@@ -1,41 +1,20 @@
-<%= form_for @recipe do |f| %>
-
-  <div>Instructions:</div> <div><%= f.text_area :instructions %></div>
-
-Add Ingredients:
-
-   <div>
-    <%= f.fields_for :recipe_ingredients, @ingredients do |recipe_ingredient| %>
-    <div>
-      Quantity: <%= recipe_ingredient.text_field :quantity %><br>
-      <br>
-  
-    Select Ingredient:
-    <%= recipe_ingredient.collection_select :ingredient_id, Ingredient.order('name ASC').all, :id, :name, include_blank: 'Select Ingredient' %>
-    <%= recipe_ingredient.fields_for :ingredient, @recipe.ingredients.build do |ingredient| %>
-    Or Create New Ingredient: <%= ingredient.text_field :name %>
-    <% end %>
-    </div>
-      <% end %>
-   </div>
-
-  <%= f.submit "Submit" %>
-
-<% end %>
 
 <h1>Create a New Recipe</h1>
 
 <%= form_for @recipe do |f| %>
+    <%= f.hidden_field :user_id, :value => @user.id %>
     <%= f.label :name, "Recipe Name: "%>
     <%= f.text_field :name %><br>
 
     <%= f.label :serves, "Serving Size: "%>
     <%= f.number_field :serves %><br>
 
-    <%# line 11 needs the .build method DJ said to use (instead of controller, I assume) %>
+    <%# line 36 needs the .build method DJ said to use (instead of controller, I assume) %>
+    <% 5.times do |ing| %>
     <%= f.fields_for :ingredients do |i| %>
     <%# figure out how to incorporate option for adding however many ingredients %>
-       <%= i.label :name, "Ingredient: " %>
+       
+       <%= i.label :name, "Ingredient #{ing+1}: " %>
        <%= i.text_field :name %><br>
 
        <%= i.label :quantity, "Quantity: " %>
@@ -48,6 +27,7 @@ Add Ingredients:
        <%= i.text_field :unit %><br>
 
 
+    <% end %>
     <% end %>
 
     <%= f.submit %>

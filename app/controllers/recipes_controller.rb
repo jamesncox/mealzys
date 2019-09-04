@@ -15,8 +15,9 @@ class RecipesController < ApplicationController
     end
 
     def create
+    
         @recipe = Recipe.new (recipe_params)
-
+        
         if @recipe.save 
             redirect_to @recipe
         else
@@ -35,7 +36,7 @@ class RecipesController < ApplicationController
     private
         # nested form lab, adding ingredients attributes to recipe_params
         def recipe_params
-            params.require(:recipe).permit(:name, :serves, :sauce, :garnish, :instructions,
+            params.require(:recipe).permit(:name, :serves, :sauce, :garnish, :instructions, :user_id,
                 ingredients_attributes: [
                     :name, 
                     :quantity,

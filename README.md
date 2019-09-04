@@ -80,3 +80,33 @@ Nest inside either the ingredient or recipe form.
 FOR EVALUATION:
 
 Look over form_tag syntax for login
+
+
+
+
+CRAPPY NEW RECIPE FORM
+
+ <%= form_for @recipe do |f| %>
+ 
+<div>Instructions:</div> <div><%= f.text_area :instructions %></div>
+
+Add Ingredients:
+
+   <div>
+    <%= f.fields_for :recipe_ingredients, @ingredients do |recipe_ingredient| %>
+    <div>
+      Quantity: <%= recipe_ingredient.text_field :quantity %><br>
+      <br>
+  
+    Select Ingredient:
+    <%= recipe_ingredient.collection_select :ingredient_id, Ingredient.order('name ASC').all, :id, :name, include_blank: 'Select Ingredient' %>
+    <%= recipe_ingredient.fields_for :ingredient, @recipe.ingredients.build do |ingredient| %>
+    Or Create New Ingredient: <%= ingredient.text_field :name %>
+    <% end %>
+    </div>
+      <% end %>
+   </div>
+
+  <%= f.submit "Submit" %>
+
+<% end %>
