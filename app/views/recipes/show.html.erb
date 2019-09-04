@@ -1,29 +1,11 @@
-<h2><%= @recipe.name %></h2><br>
+<h2><%= @recipe.name %></h2>
 
-<%= @recipe.serves %>
-<%= @recipe.instructions %>
- <% @recipe.ingredients.each do |ingredient| %>
-      <%= ingredient.name %>
-      <%= ingredient.quantity %>
-      <%= ingredient.unit %>
-    <% end %>
+<p><label>Serves: </label><%= @recipe.serves %></p>
+<P><h3>Ingredients | Quantity | Unit Type</h3></P>
+  <% @recipe.ingredients.each do |ingredient| %>
+      <p><%= ingredient.name %> |
+      <%= ingredient.quantity %> |
+      <%= ingredient.unit %></p>
+  <% end %>
 
-<%# create_table "recipes", force: :cascade do |t|
-    t.string "name"
-    t.integer "serves"
-    t.string "sauce"
-    t.string "garnish"
-    t.text "instructions"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
-  end %>
-
-  <%# create_table "ingredients", force: :cascade do |t|
-    t.string "name"
-    t.string "quantity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "size"
-    t.string "unit"
-  end %>
+<p><%= @recipe.instructions %></p>
