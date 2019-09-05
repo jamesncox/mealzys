@@ -1,6 +1,6 @@
-EDIT CLIENT
+<h2>Edit <%= @client.name %></h2>
 
-<%= render partial: 'clients/form' %>
+<%= render 'form' %>
 
 <p><%= button_to "Delete #{@client.name}", client_path, :method => "delete" %></p>
 

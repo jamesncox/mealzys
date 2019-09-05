@@ -29,6 +29,7 @@ class RecipesController < ApplicationController
     end
 
     def update
+        #I *think* something inside this controller action is making my edit form display duplicates.
         @recipe = Recipe.find(params[:id])
         @recipe.update(recipe_params)
         redirect_to recipe_path(@recipe)
