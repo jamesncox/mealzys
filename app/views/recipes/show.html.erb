@@ -12,4 +12,8 @@
 
 <p><%= @recipe.instructions %></p>
 
-<%= button_to "Homepage", root_path, :method => "get" %>
+<p><%= button_to "Edit #{@recipe.name}", edit_recipe_path, :method => "get" %></p>
+
+<p><%= button_to "Add another recipe", new_recipe_path, :method => "get" %></p>
+
+<p><%= button_to "Homepage", root_path, :method => "get" %></p>

@@ -1,0 +1,27 @@
+<%= form_for @recipe do |f| %>
+    <%= f.hidden_field :user_id, :value => @user.id %>
+    <p><%= f.label :name, "Recipe Name: "%>
+    <%= f.text_field :name %></p>
+
+    <p><%= f.label :serves, "Serving Size: "%>
+    <%= f.number_field :serves %></p>
+
+    <%# line 36 needs the .build method DJ said to use (instead of controller, I assume) %>
+    <%= f.fields_for :ingredients do |i|  %>
+    <%# figure out how to incorporate option for adding however many ingredients %>
+       
+       <%= i.label :name, "Ingredient: " %>
+       <%= i.text_field :name %>
+
+       <%= i.label :quantity, "Quantity: " %>
+       <%= i.text_field :quantity %>
+       
+       <%= i.label :unit, "Unit: " %>
+       <%= i.text_field :unit %>
+
+
+    <% end %>
+    <p><%= f.label :instructions, "Instructions: "%>
+    <%= f.text_area :instructions, size: "105x5" %></p>
+    <%= f.submit %>
+<% end %>

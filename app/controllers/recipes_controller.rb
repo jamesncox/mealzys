@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
 
     def new 
         @recipe = Recipe.new
-        10.times { @recipe.ingredients.build }
+        20.times { @recipe.ingredients.build }
     end
 
     def create
@@ -24,11 +24,20 @@ class RecipesController < ApplicationController
     end
 
     def edit 
-
+        #ask DJ if .find or .find_by is, in his opinion, better, and help explain the difference again.
+        @recipe = Recipe.find(params[:id])
     end
 
-    def delete
+    def update
+        @recipe = Recipe.find(params[:id])
+        @recipe.update(recipe_params)
+        redirect_to recipe_path(@recipe)
+    end 
 
+    def destroy
+        @recipe = Recipe.find(params[:id])
+        @recipe.destroy
+        redirect to recipes_path
     end
 
     private
