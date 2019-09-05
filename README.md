@@ -112,16 +112,6 @@ Add Ingredients:
 <% end %>
 
 
-Name: Salmon Cakes
-Serving size: 8 people
-
-Ingredients: 
-1. Salmon, 8 4oz filets
-2. Panko bread crumbs, 8 oz
-3. Green bell pepper
-
-
-
 def self.find_by(id)
   self.where(id) 
 end 
@@ -135,9 +125,9 @@ def self.has_restriction(name)
 end # return all recipes with name as a restriction would need to be a form, i'd use form tag  
 
 
+#STILL TO DO:
 
-Get rid of attributes:
+1. Create the "tags" for recipe_ingredients model (maybe the clients_restrictions model instead?)
+    Then we can link these to recipes with dropdown boxes to select generic/common types of allergies
 
-ingredients "size"
-
-recipe "sauce", "garnish"
+2. Stub out / hardcode some features I'd like to see in my views to wrap my brain around what I have still to do...
