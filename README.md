@@ -131,3 +131,6 @@ end # return all recipes with name as a restriction would need to be a form, i'd
     Then we can link these to recipes with dropdown boxes to select generic/common types of allergies
 
 2. Stub out / hardcode some features I'd like to see in my views to wrap my brain around what I have still to do...
+  a. add category to recipe for breakfast/lunch/dinner
+  b. add dynamic list of clients and their restrctions to recipe show page
+  c. change the recipe show page list of ingredients, etc. into an actual table with rows/columns?

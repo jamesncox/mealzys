@@ -1,13 +1,15 @@
 <h2><%= @recipe.name %></h2>
 
+<p><label>**Category: Breakfast/Lunch/Dinner **</label></p>
+
 <p><label>Serves: </label><%= @recipe.serves %></p>
 
-<P><h3>Ingredients | Quantity | Unit Type</h3></P>
+<p><h3>Ingredients | Quantity | Unit Type</h3></p>
 
 <section class="todoapp">
 	<section class="main" style="display: block;">
 		<ul class="todo-list">
-
+(can I turn this into a table with actual rows and columns?)
         <% @recipe.ingredients.each do |attr| %>
           <p><%= attr.name %> |
           <%= attr.quantity %> |
@@ -19,6 +21,10 @@
     </ul>
 	</section>
 </section>
+
+<p><label>**Contains These Allergies** with a dropdown menu of common allergies**</label></p>
+
+<p><label>**List of clients and their restrictions here**</label></p>
 
 <p><%= button_to "Edit #{@recipe.name}", edit_recipe_path, :method => "get" %></p>
 
