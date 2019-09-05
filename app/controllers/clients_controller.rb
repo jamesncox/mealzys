@@ -9,6 +9,7 @@ class ClientsController < ApplicationController
 
     def new
         @client = Client.new
+        5.times { @client.restrictions.build }
     end
 
     def create
@@ -40,7 +41,10 @@ class ClientsController < ApplicationController
       
     private
         def client_params
-            params.require(:client).permit(:name)
+            params.require(:client).permit(:name,
+                restrictions_attributes: [
+                    :name
+                ]
+            )
         end
-
 end
