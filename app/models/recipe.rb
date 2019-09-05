@@ -10,6 +10,11 @@ class Recipe < ApplicationRecord
     validates :name, uniqueness: true
     validates :name, presence: true
 
+    # scope :breakfast, where(:meals => 'breakfast')
+
+    # def breakfast
+    #     @recipes = Recipe.breakfast
+    # end
 
     # def ingredients_attributes=(ingredients_attributes)
     #     ingredients_attributes.map do |attr|
@@ -18,5 +23,19 @@ class Recipe < ApplicationRecord
     #         end 
     #     end 
 
+    # end 
+
+    # def ordered_meals
+    #     ordered_meal = []
+    # end 
+
+    # def self.order_index_by_meal_type
+    #     if @recipe.meal == "breakfast"
+    #         ordered_meals << @recipe.meal
+    #     elsif @recipe.meal == "lunch"
+    #         ordered_meals << @recipe.meal
+    #     else
+    #         ordered_meals << @recipe.meal 
+    #     end 
     # end 
 end
