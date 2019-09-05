@@ -4,13 +4,21 @@
 
 <P><h3>Ingredients | Quantity | Unit Type</h3></P>
 
-  <% @recipe.ingredients.each do |attr| %>
-      <p><%= attr.name %> |
-      <%= attr.quantity %> |
-      <%= attr.unit %></p>
-  <% end %>
+<section class="todoapp">
+	<section class="main" style="display: block;">
+		<ul class="todo-list">
 
-<p><%= @recipe.instructions %></p>
+        <% @recipe.ingredients.each do |attr| %>
+          <p><%= attr.name %> |
+          <%= attr.quantity %> |
+          <%= attr.unit %></p>
+        <% end %>
+
+        <p><%= @recipe.instructions %></p>
+
+    </ul>
+	</section>
+</section>
 
 <p><%= button_to "Edit #{@recipe.name}", edit_recipe_path, :method => "get" %></p>
 
