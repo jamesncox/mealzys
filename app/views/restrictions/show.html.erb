@@ -1,0 +1,7 @@
+<h3><%= @restriction.name %></h3>
+
+<p><%= button_to "Edit #{@restriction.name}", edit_restriction_path, :method => "get" %></p>
+
+<p><%= button_to "Add another restriction", new_restriction_path, :method => "get" %></p>
+
+<p><%= button_to "Homepage", root_path, :method => "get" %></p>
