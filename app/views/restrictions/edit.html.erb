@@ -1,0 +1,7 @@
+<h2>Edit <%= @restriction.name %></h2>
+
+<%= render 'form' %>
+
+<p><%= button_to "Delete #{@restriction.name}", restriction_path, :method => "delete" %></p>
+
+<p><%= button_to "Homepage", root_path, :method => "get" %></p>

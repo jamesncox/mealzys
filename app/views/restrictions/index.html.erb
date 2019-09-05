@@ -1,0 +1,9 @@
+<h1>View Your Client's Restrictions</h1>
+
+<% @restrictions.each do |restriction| %>
+    <ul>
+    <%= link_to restriction.name, "restrictions/#{restriction.id}" %>
+    </ul>
+<% end %>
+
+<p><%= button_to "Homepage", root_path, :method => "get" %></p>
