@@ -32,6 +32,9 @@ gem 'pry'
 gem 'omniauth'
 gem 'omniauth-twitter'
 
+#table generator gem for recipe views
+gem 'table_for_collection'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
