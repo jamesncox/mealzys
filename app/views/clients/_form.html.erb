@@ -3,7 +3,6 @@
     <%= f.text_field :name %></p>
 
     <%= f.fields_for :restrictions do |r|  %>
-    <%# figure out how to incorporate option for adding however many ingredients %>
        
        <br><%= r.label :name, "Restriction: " %>
        <%= r.text_field :name %>
