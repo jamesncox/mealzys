@@ -2,6 +2,6 @@
 
 <%= render 'form' %>
 
-<p><%= button_to "Delete #{@recipe.name}", recipe_path, :method => "delete" %></p>
+<p><%= button_to "Delete #{@recipe.name}", recipe_path, :method => "delete", data: {confirm: "Are you sure?"}  %></p>
 
 <p><%= button_to "Homepage", root_path, :method => "get" %></p>
