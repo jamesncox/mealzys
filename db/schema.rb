@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_201716) do
+ActiveRecord::Schema.define(version: 2019_09_07_210357) do
 
   create_table "client_restrictions", force: :cascade do |t|
     t.integer "client_id"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_09_05_201716) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "meal"
+    t.string "allergy"
   end
 
   create_table "restrictions", force: :cascade do |t|
