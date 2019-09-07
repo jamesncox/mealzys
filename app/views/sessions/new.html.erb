@@ -1,14 +1,6 @@
 <h1>Login</h1>
 <%= form_tag login_path %>
 
-<% if flash[:note] %>
-    <%= flash[:note] %>
-    <%end%>
-    <%= error_messages_for :user %>
-    <% for error in @user.errors.full_messages %>
-    <%= error %>
-    <% end %>
-
   <div class=”field”>
     <%= label_tag :name %>
     <%= text_field_tag :name %>

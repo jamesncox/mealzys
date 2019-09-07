@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
         session[:user_id] = @user.id
         redirect_to root_path
       else
-        flash[:note] = "Failed to Log In"
+        # flash[:note] = "Failed to Log In"
         redirect_to login_path
       end
     end

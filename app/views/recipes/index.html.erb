@@ -1,15 +1,17 @@
 <h1>Your Recipes</h1>
 
-<p><label>Breakfasts: </label></p>
+<h3>Breakfasts:</h3>
 
 <%= render partial: "recipe_meal", locals: {meals: @breakfasts } %>
 
-<p><label>Lunches: </label></p>
+<h3>Lunches:</h3>
 
 <%= render partial: "recipe_meal", locals: {meals: @lunches } %>
 
-<p><label>Dinners: </label></p>
+<h3>Dinners:</h3>
 
 <%= render partial: "recipe_meal", locals: {meals: @dinners } %>
+
+<p><%= button_to "Create a Recipe", new_recipe_path, :method => "get" %></p>
 
 <p><%= button_to "Homepage", root_path, :method => "get" %></p>
