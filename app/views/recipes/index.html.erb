@@ -1,24 +1,15 @@
 <h1>Your Recipes</h1>
 
-<% @recipes.each do |recipe| %>
-    </ul>
-    <%= link_to recipe.name, "recipes/#{recipe.id}" %><br>
-    </ul>
-<% end %>
-
-<p><label>**Would love to have the recipe index sorted by the breakfast/lunch/dinner attributes**</label></p>
-
 <p><label>Breakfasts: </label></p>
-B-1
-B-2
-B-3
+
+<%= render partial: "recipe_meal", locals: {meals: @breakfasts } %>
+
 <p><label>Lunches: </label></p>
-L-1
-L-2
-L-3
+
+<%= render partial: "recipe_meal", locals: {meals: @lunches } %>
+
 <p><label>Dinners: </label></p>
-D-1
-D-2 
-D-3
+
+<%= render partial: "recipe_meal", locals: {meals: @dinners } %>
 
 <p><%= button_to "Homepage", root_path, :method => "get" %></p>

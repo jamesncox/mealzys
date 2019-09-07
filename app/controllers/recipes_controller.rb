@@ -4,8 +4,15 @@ class RecipesController < ApplicationController
     end 
 
     def index
-        @recipes = Recipe.all
+        @breakfasts = Recipe.sorted("breakfast")
+        @lunches = Recipe.sorted("lunch")
+        @dinners = Recipe.sorted("dinner")
     end
+
+    # def index
+    #     @color = params[:color] #this could be data you get from a form
+    #     @shirts = Shirt.colored(@color)
+    #   end
 
     def new 
         @recipe = Recipe.new
