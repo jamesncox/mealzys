@@ -1,30 +1,37 @@
 <%= form_for @recipe do |f| %>
     <%= f.hidden_field :user_id, :value => @user.id %>
     <p><%= f.label :name, "Recipe Name: "%>
-    <%= f.text_field :name %></p>
+    <%= f.text_field :name %><br>
 
-    <p><%= f.label :meal, "Meal Type: " %>
-    <%= f.text_field :meal %></p>
+    <%= f.label :meal, "Meal Type: " %>
+    <%= f.text_field :meal %><br>
 
-    <p><%= f.label :serves, "Serving Size: "%>
+    <%= f.label :serves, "Serving Size: "%>
     <%= f.number_field :serves %></p>
 
-    <%# line 36 needs the .build method DJ said to use (instead of controller, I assume) %>
-    <%= f.fields_for :ingredients do |i|  %>
-    <%# figure out how to incorporate option for adding however many ingredients %>
+    <%= f.fields_for :ingredients do |ing|  %>
        
-       <%= i.label :name, "Ingredient: " %>
-       <%= i.text_field :name %>
+       <%= ing.label :name, "Ingredient: " %>
+       <%= ing.text_field :name %>
 
-       <%= i.label :quantity, "Quantity: " %>
-       <%= i.text_field :quantity %>
+       <%= ing.label :quantity, "Quantity: " %>
+       <%= ing.text_field :quantity %>
        
-       <%= i.label :unit, "Unit: " %>
-       <%= i.text_field :unit %>
-
+       <%= ing.label :unit, "Unit: " %>
+       <%= ing.text_field :unit %>
 
     <% end %>
+
     <p><%= f.label :instructions, "Instructions: "%>
     <%= f.text_area :instructions, size: "105x5" %></p>
+
+    <%# <p><%= f.fields_for :recipe_ingredients do |a|  %> <%# something about nesting and iterating is creating duplicates in the edit/update acitons %>
+       
+       <%# <%= a.label :allergy, "Recipe Allergies: " %>
+       <%# <%= a.text_field :allergy %>
+
+    <%# <% end %></p>
+
     <%= f.submit %>
+
 <% end %>

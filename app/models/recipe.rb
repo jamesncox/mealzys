@@ -7,6 +7,8 @@ class Recipe < ApplicationRecord
     accepts_nested_attributes_for :ingredients,
                                        reject_if: lambda{ |ingred| ingred["name"].blank? }
 
+    accepts_nested_attributes_for :recipe_ingredients
+
     validates :name, uniqueness: true
     validates :name, presence: true
 
