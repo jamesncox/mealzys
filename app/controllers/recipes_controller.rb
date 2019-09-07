@@ -59,11 +59,6 @@ class RecipesController < ApplicationController
                     :quantity,
                     :unit,
                     :id]
-                # ],
-                # recipe_ingredients_attributes: [
-                #     :allergy,
-                #     :id
-                # ]
             )
         end
 end

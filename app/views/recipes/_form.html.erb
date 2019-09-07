@@ -25,13 +25,6 @@
     <p><%= f.label :instructions, "Instructions: "%>
     <%= f.text_area :instructions, size: "105x5" %></p>
 
-    <%# <p><%= f.fields_for :recipe_ingredients do |a|  %> <%# something about nesting and iterating is creating duplicates in the edit/update acitons %>
-       
-       <%# <%= a.label :allergy, "Recipe Allergies: " %>
-       <%# <%= a.text_field :allergy %>
-
-    <%# <% end %></p>
-
     <%= f.submit %>
 
 <% end %>
