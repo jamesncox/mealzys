@@ -4,7 +4,7 @@ class ClientsController < ApplicationController
     end 
 
     def index
-        @clients = Client.all
+        @clients = Client.order(:name)
     end
 
     def new
@@ -32,6 +32,7 @@ class ClientsController < ApplicationController
             redirect_to client_path(@client)
         else
             render action :edit
+        end
     end 
 
     def destroy
