@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
         @breakfasts = Recipe.sorted("breakfast")
         @lunches = Recipe.sorted("lunch")
         @dinners = Recipe.sorted("dinner")
+        @recipes = Recipe.all
     end
 
     # def index
