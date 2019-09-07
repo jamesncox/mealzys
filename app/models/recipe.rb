@@ -11,6 +11,10 @@ class Recipe < ApplicationRecord
     validates :name, presence: true
 
     scope :sorted, -> (meal) {where(meal: meal)}
+
+    # def downcase_meals(meal: meal)
+    #     self.meal.downcase!
+    # end
     
     # scope :sorted, where(:meal => 'meal')
 
