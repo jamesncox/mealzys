@@ -31,6 +31,7 @@ class RestrictionsController < ApplicationController
             redirect_to restriction_path(@restriction)
         else
             render action :edit
+        end
     end 
 
     def destroy
@@ -44,7 +45,8 @@ class RestrictionsController < ApplicationController
         def restriction_params
             params.require(:restriction).permit(:name,
                 restrictions_attributes: [
-                    :name
+                    :name,
+                    :id
                 ]
             )
         end
