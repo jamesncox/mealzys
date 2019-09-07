@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_201716) do
+ActiveRecord::Schema.define(version: 2019_09_07_200008) do
 
   create_table "client_restrictions", force: :cascade do |t|
     t.integer "client_id"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_09_05_201716) do
     t.integer "ingredient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "allergy"
     t.index ["ingredient_id"], name: "index_recipe_ingredients_on_ingredient_id"
     t.index ["recipe_id"], name: "index_recipe_ingredients_on_recipe_id"
   end
