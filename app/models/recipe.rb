@@ -10,12 +10,13 @@ class Recipe < ApplicationRecord
     validates :name, uniqueness: true
     validates :name, presence: true
 
-    # scope :sorted, -> (meal) {where(meal: meal)}
+    scope :sorted, -> (meal) {where(meal: meal)}
+    
     # scope :sorted, where(:meal => 'meal')
 
-    def self.sorted(meal)
-        where(meal: meal)
-    end
+    # def self.sorted(meal)
+    #     where(meal: meal)
+    # end
 
     # def ingredients_attributes=(ingredients_attributes)
     #     ingredients_attributes.map do |attr|
