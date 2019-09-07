@@ -2,13 +2,14 @@ class Recipe < ApplicationRecord
     belongs_to :user
     has_many :recipe_ingredients
     has_many :ingredients, through: :recipe_ingredients
-    #write custom nested_attributes
-    #add user.id as a hidden field
+    
     accepts_nested_attributes_for :ingredients,
                                        reject_if: lambda{ |ingred| ingred["name"].blank? }
 
     validates :name, uniqueness: true
     validates :name, presence: true
+
+    validates :allergy, uniqueness: true
 
     scope :sorted, -> (meal) {where(meal: meal)}
 

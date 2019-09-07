@@ -22,8 +22,11 @@
 
     <% end %>
 
-    <p><%= f.label :instructions, "Instructions: "%>
+    <p><%= f.label :instructions, "Instructions: " %>
     <%= f.text_area :instructions, size: "105x5" %></p>
+
+    <p><%= f.label :allergy, "Recipe Allergies: " %>
+    <%= f.text_field :allergy %></p>
 
     <%= f.submit %>
 

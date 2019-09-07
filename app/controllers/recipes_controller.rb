@@ -53,7 +53,7 @@ class RecipesController < ApplicationController
     private
         # nested form lab, adding ingredients attributes to recipe_params
         def recipe_params
-            params.require(:recipe).permit(:name, :serves, :instructions, :user_id, :meal,
+            params.require(:recipe).permit(:name, :serves, :instructions, :user_id, :meal, :allergy,
                 ingredients_attributes: [
                     :name, 
                     :quantity,
