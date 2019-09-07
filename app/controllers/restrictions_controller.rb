@@ -27,8 +27,10 @@ class RestrictionsController < ApplicationController
 
     def update
         @restriction = Restriction.find(params[:id])
-        @restriction.update(restriction_params)
-        redirect_to restriction_path(@restriction)
+        if @restriction.update(restriction_params)
+            redirect_to restriction_path(@restriction)
+        else
+            render action :edit
     end 
 
     def destroy
