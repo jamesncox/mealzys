@@ -135,3 +135,19 @@ end # return all recipes with name as a restriction would need to be a form, i'd
   b. add dynamic list of clients and their restrctions to recipe show page
   c. change the recipe show page list of ingredients, etc. into an actual table with rows/columns?
   d. write scope method in Recipe model to sort by breakfast, lunch, dinner in the index view.
+
+
+#MOVED OUT OF USERS/NEW.HTML.ERB for now.
+  <% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |msg| %>
+      <h3><%= msg %></h3>
+    <% end %>
+  <% end %>
+
+  <% if @user.errors.any? %>
+    <ul class="Signup_Errors">
+    <% for message_error in @user.errors.full_messages %>
+      <li>* <%= message_error %></li>
+    <% end %>
+    </ul>
+  <% end %>
