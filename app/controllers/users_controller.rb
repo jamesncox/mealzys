@@ -3,13 +3,13 @@ class UsersController < ApplicationController
     end
   
     def create
-      #conditional or some other ActiveRecord macro to fix my user already exists issue.
+      #my sessions or user controller is broken and won't send my user to new signup page...forms look fine.
       @user = User.new(user_params)
       if @user.save
         session[:user_id] = @user.id
         redirect_to root_path
       else 
-        render new_user_path
+        redirect_to new_user_path
       end
     end
   

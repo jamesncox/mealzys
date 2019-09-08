@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         redirect_to root_path
       else
         # flash[:note] = "Failed to Log In"
-        redirect_to login_path
+        render new_user_path
       end
     end
   
