@@ -108,7 +108,8 @@ end # return all recipes with name as a restriction would need to be a form, i'd
 [x] c. change the recipe show page list of ingredients, etc. into an actual table with rows/columns?
 [x]  d. write scope method in Recipe model to sort by breakfast, lunch, dinner in the index view.
 
-3. My sessions controller and/or user controllers are not doing what they're supposed to be doing... when I click login, I'll get directed to my homepage, but if I click new user signup I also get directed to my homepage as if i were already logged in.
+[x} 3. My sessions controller and/or user controllers are not doing what they're supposed to be doing... when I click login, I'll get directed to my homepage, but if I click new user signup I also get directed to my homepage as if i were already logged in.
+  a. stlye the button whenever...
 
 4. Create error messages for when logging in/signing up goes wrong.
 
@@ -140,3 +141,18 @@ end # return all recipes with name as a restriction would need to be a form, i'd
   git add . add new files 
   git commit -m "message" commit message/stage changes 
   git push "pushes code to github" 
+
+
+  on recipe show 
+    -get list of clients who have a restriction to a ingrtedient in recipe 
+    recipe.ingredients =  name: "peanut butter" unit: "tablespoons">, name: "jelly", quantity: "2 ",  unit: "tablespoons">,, name: "bread", quantity: "2 ", ]>
+
+    client.restrictions = name: "Dairy", , name: "Gluten", name: "Eggplant",, #<Restriction id: 105, name: "Mushrooms",  name: "Fish",
+
+    we have 2 arrays 
+    i need to check each element for a string match 
+
+    client.restrictions.each do |res|
+      if res.name.in? recipe.ingredients 
+
+      end 
