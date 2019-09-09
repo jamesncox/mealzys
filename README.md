@@ -127,14 +127,18 @@ end # return all recipes with name as a restriction would need to be a form, i'd
 
 #STILL TO DO:
 
-1. Create the "tags" for recipe_ingredients model (maybe the clients_restrictions model instead?)
+[x] 1. Create the "tags" for recipe_ingredients model (maybe the clients_restrictions model instead?)
     Then we can link these to recipes with dropdown boxes to select generic/common types of allergies
 
 2. Stub out / hardcode some features I'd like to see in my views to wrap my brain around what I have still to do...
-  a. add category to recipe for breakfast/lunch/dinner
-  b. add dynamic list of clients and their restrctions to recipe show page
-  c. change the recipe show page list of ingredients, etc. into an actual table with rows/columns?
-  d. write scope method in Recipe model to sort by breakfast, lunch, dinner in the index view.
+[x]  a. add category to recipe for breakfast/lunch/dinner
+  b. add dynamic list of clients and their restrictions to recipe show page
+[x] c. change the recipe show page list of ingredients, etc. into an actual table with rows/columns?
+[x]  d. write scope method in Recipe model to sort by breakfast, lunch, dinner in the index view.
+
+3. My sessions controller and/or user controllers are not doing what they're supposed to be doing... when I click login, I'll get directed to my homepage, but if I click new user signup I also get directed to my homepage as if i were already logged in.
+
+4. Create error messages for when logging in/signing up goes wrong.
 
 
 #MOVED OUT OF USERS/NEW.HTML.ERB for now.
