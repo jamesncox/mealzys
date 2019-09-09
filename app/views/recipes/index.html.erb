@@ -15,13 +15,3 @@
 <p><%= button_to "Create a Recipe", new_recipe_path, :method => "get" %></p>
 
 <p><%= button_to "Homepage", root_path, :method => "get" %></p>
-
-<br>
-<br>
-THE FOLLOWING IS TO REFERENCE UNTIL I FIX THE "DOWNCASE" PROBLEM
-
-<% @recipes.each do |recipe| %>
-
-    <p><%= link_to recipe.name, recipe %></p>
-
-<% end %>

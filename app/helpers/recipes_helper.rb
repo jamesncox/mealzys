@@ -4,9 +4,19 @@ module RecipesHelper
     #then an if statement if true (matches) the client name and shovel <<
 
     def find_restrictions(clients, recipe)
+        # binding.pry
         danger = {}
-        ingredients = []
+        danger << clients
+        clients.each do |client|
+            client.restrictions.each do |res|
+                res
+            end 
+         end
     end 
+
+    # danger = {"Tiffany"=> [dairy, gluten, mushrooms]}
+
+    
     # def find_restrictions(clients, recipe)
     #     danger = []
     #     client_res = []
