@@ -3,16 +3,16 @@ module RecipesHelper
     #refactor this method to make danger = {} and store each client as a key, and make an array of ingredients as the value.
     #then an if statement if true (matches) the client name and shovel <<
 
-    def find_restrictions(clients, recipe)
-        # binding.pry
-        danger = {}
-        danger << clients
-        clients.each do |client|
-            client.restrictions.each do |res|
-                res
-            end 
-         end
-    end 
+    # def find_restrictions(clients, recipe)
+    #     # binding.pry
+    #     danger = {}
+    #     danger << clients
+    #     clients.each do |client|
+    #         client.restrictions.each do |res|
+    #             res
+    #         end 
+    #      end
+    # end 
 
     # danger = {"Tiffany"=> [dairy, gluten, mushrooms]}
 
