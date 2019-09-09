@@ -21,7 +21,7 @@
 
 <p><label>Recipe Allergies: </label><%= @recipe.allergy %></p>
 
-<p><label>**List of clients and their restrictions here**</label></p>
+<%= find_restrictions(@clients, @recipe) %>
 
 <p><%= button_to "Edit #{@recipe.name}", edit_recipe_path, :method => "get" %></p>
 

@@ -4,11 +4,11 @@ class RecipesController < ApplicationController
 
     def show
         @recipe = Recipe.find(params[:id])
+        @clients = Client.all
     end 
 
     def index
         @recipes = Recipe.where(user: current_user)
-
     end
 
     # def index
@@ -34,6 +34,7 @@ class RecipesController < ApplicationController
     def edit 
         #ask DJ if .find or .find_by is, in his opinion, better, and help explain the difference again.
         @recipe = Recipe.find(params[:id])
+        20.times { @recipe.ingredients.build }
     end
 
     def update
