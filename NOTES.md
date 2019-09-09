@@ -99,7 +99,8 @@ end # return all recipes with name as a restriction would need to be a form, i'd
 #STILL TO DO:
 
 [x] 1. Create the "tags" for recipe_ingredients model (maybe the clients_restrictions model instead?)
-    Then we can link these to recipes with dropdown boxes to select generic/common types of allergies
+    Then we can link these to recipes with dropdown boxes to select generic/common types of allergies.
+    Actually, I just created an :allergy attribute of Recipe model, to associate those to client's matching restriction.
 
 2. Stub out / hardcode some features I'd like to see in my views to wrap my brain around what I have still to do...
 [x]  a. add category to recipe for breakfast/lunch/dinner
@@ -110,6 +111,12 @@ end # return all recipes with name as a restriction would need to be a form, i'd
 3. My sessions controller and/or user controllers are not doing what they're supposed to be doing... when I click login, I'll get directed to my homepage, but if I click new user signup I also get directed to my homepage as if i were already logged in.
 
 4. Create error messages for when logging in/signing up goes wrong.
+
+5. Abstract the meal_type partial into a helper method?
+
+6. Create helper(class?) method to take a client's restriction and look for an ingredient in a recipe, and post that client's name and matching restriction(ingredient) in the recipe show page. 
+
+7. Create similar helper(class? scope?) method to match a recipe's allergy attribute to a client's restriction, and similarly display the client and matching restriciton in the recipe show page.
 
 
 #MOVED OUT OF USERS/NEW.HTML.ERB for now.
