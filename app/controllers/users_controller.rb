@@ -22,5 +22,5 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :password, :password_confirmation)
     end
 
-    # test commit11
+    # tdxrfh
 end
