@@ -35,6 +35,10 @@ gem 'omniauth-twitter'
 #table generator gem for recipe views
 gem 'table_for_collection'
 
+
+# normalize meal names
+gem 'normalize-rails'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

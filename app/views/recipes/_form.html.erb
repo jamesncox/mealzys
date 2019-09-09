@@ -1,4 +1,12 @@
 <%= form_for @recipe do |f| %>
+
+    <% if @recipe.errors.any? %>
+        <% @recipe.errors.full_messages.each do |msg| %>
+            <%= msg %>
+        <% end %>
+    <% end %>
+
+
     <%= f.hidden_field :user_id, :value => @user.id %>
     <p><%= f.label :name, "Recipe Name: "%>
     <%= f.text_field :name %><br>

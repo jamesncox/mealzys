@@ -135,3 +135,8 @@ end # return all recipes with name as a restriction would need to be a form, i'd
     <% end %>
     </ul>
   <% end %>
+
+
+  git add . add new files 
+  git commit -m "message" commit message/stage changes 
+  git push "pushes code to github" 

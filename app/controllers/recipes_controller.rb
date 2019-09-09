@@ -1,14 +1,14 @@
 class RecipesController < ApplicationController
+
+    before_action :uniform_meal_name, only: [:create]
+
     def show
         @recipe = Recipe.find(params[:id])
     end 
 
     def index
         @recipes = Recipe.where(user: current_user)
-        @breakfasts = @recipes.sorted("breakfast")
-        @lunches = @recipes.sorted("lunch")
-        @dinners = @recipes.sorted("dinner")
-        # @recipes = Recipe.all
+
     end
 
     # def index
@@ -41,7 +41,7 @@ class RecipesController < ApplicationController
         if @recipe.update(recipe_params)
             redirect_to recipe_path(@recipe)
         else
-            render action :edit
+            render :edit
         end
     end 
 
@@ -62,4 +62,9 @@ class RecipesController < ApplicationController
                     :id]
             )
         end
+
+        def uniform_meal_name 
+            params[:recipe][:meal] = params[:recipe][:meal].downcase
+            
+        end 
 end

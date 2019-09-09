@@ -31,7 +31,7 @@ class ClientsController < ApplicationController
         if @client.update(client_params)
             redirect_to client_path(@client)
         else
-            render action :edit
+            render :edit
         end
     end 
 

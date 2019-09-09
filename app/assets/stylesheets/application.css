@@ -13,3 +13,16 @@
  *= require_tree .
  *= 
  */
+
+
+ .form-button{
+    background-color: gray;
+    border: none;
+    color: white;
+    padding: .5rem;
+    margin: .5rem;
+    text-align: center;
+    font-size: 14px;
+    
+
+ }

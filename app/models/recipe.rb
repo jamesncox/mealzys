@@ -11,7 +11,7 @@ class Recipe < ApplicationRecord
 
     validates :allergy, uniqueness: true
 
-    scope :sorted, -> (meal) {where(meal: meal)}
+    scope :food_by_meal, -> (meal) {where(meal: meal)}
 
     # def downcase_meals(meal: meal)
     #     self.meal.downcase!

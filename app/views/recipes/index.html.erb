@@ -2,15 +2,15 @@
 
 <h3><font color="CornFlowerBlue">Breakfasts:</font></h3>
 
-<%= render partial: "recipe_meal", locals: {meals: @breakfasts } %>
+<%= render partial: "recipe_meal", locals: {meals: @recipes.food_by_meal("breakfast") } %>
 
 <h3><font color="CornFlowerBlue">Lunches:</font></h3>
 
-<%= render partial: "recipe_meal", locals: {meals: @lunches } %>
+<%= render partial: "recipe_meal", locals: {meals: @recipes.food_by_meal("lunch") } %>
 
 <h3><font color="CornFlowerBlue">Dinners:</font></h3>
 
-<%= render partial: "recipe_meal", locals: {meals: @dinners } %>
+<%= render partial: "recipe_meal", locals: {meals: @recipes.food_by_meal("dinner") } %>
 
 <p><%= button_to "Create a Recipe", new_recipe_path, :method => "get" %></p>
 
