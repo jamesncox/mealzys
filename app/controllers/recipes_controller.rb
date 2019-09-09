@@ -4,10 +4,11 @@ class RecipesController < ApplicationController
     end 
 
     def index
-        @breakfasts = Recipe.sorted("breakfast")
-        @lunches = Recipe.sorted("lunch")
-        @dinners = Recipe.sorted("dinner")
-        @recipes = Recipe.all
+        @recipes = Recipe.where(user: current_user)
+        @breakfasts = @recipes.sorted("breakfast")
+        @lunches = @recipes.sorted("lunch")
+        @dinners = @recipes.sorted("dinner")
+        # @recipes = Recipe.all
     end
 
     # def index

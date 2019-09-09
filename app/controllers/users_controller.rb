@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       else 
         # flash[:notice] = "Form is invalid"
         # flash[:color]= "invalid"
-        redirect_to new_user_path
+        redirect_to login_path
       end
     end
   

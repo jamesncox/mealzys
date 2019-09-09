@@ -118,6 +118,8 @@ end # return all recipes with name as a restriction would need to be a form, i'd
 
 7. Create similar helper(class? scope?) method to match a recipe's allergy attribute to a client's restriction, and similarly display the client and matching restriciton in the recipe show page.
 
+8. Look up normalize before_action 
+
 
 #MOVED OUT OF USERS/NEW.HTML.ERB for now.
   <% if @user.errors.any? %>
