@@ -5,8 +5,8 @@ class User < ApplicationRecord
     validates :name, presence: true 
 
     validates :password, :presence => true,
-                       :confirmation => true,
-                       :length => { minimum: 6 }
+                        :confirmation => true,
+                        :length => { minimum: 6 }
 
     has_secure_password
 
