@@ -1,3 +1,7 @@
+<% if flash[:message] %>
+  <%= flash[:message] %>
+<% end %>
+
 <h1>Login</h1>
 <%= form_tag login_path %>
 
@@ -15,4 +19,4 @@
 
 Or<br>
 
-<%= button_to "New User Signup", new_user_path, :method => "get" %>
+<%= link_to("New User Signup", new_user_path) %>
