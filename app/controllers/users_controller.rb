@@ -22,5 +22,5 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :password, :password_confirmation)
     end
 
-    # test commit
+    # test commit11
 end
