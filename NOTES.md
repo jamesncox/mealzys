@@ -108,18 +108,20 @@ end # return all recipes with name as a restriction would need to be a form, i'd
 [x] c. change the recipe show page list of ingredients, etc. into an actual table with rows/columns?
 [x]  d. write scope method in Recipe model to sort by breakfast, lunch, dinner in the index view.
 
-[x} 3. My sessions controller and/or user controllers are not doing what they're supposed to be doing... when I click login, I'll get directed to my homepage, but if I click new user signup I also get directed to my homepage as if i were already logged in.
+[x] 3. My sessions controller and/or user controllers are not doing what they're supposed to be doing... when I click login, I'll get directed to my homepage, but if I click new user signup I also get directed to my homepage as if i were already logged in.
   a. stlye the button whenever...
 
 4. Create error messages for when logging in/signing up goes wrong.
 
-5. Abstract the meal_type partial into a helper method?
+[x] 5. Abstract the meal_type partial into a helper method? -> Not necessary. Mark complete.
 
 6. Create helper(class?) method to take a client's restriction and look for an ingredient in a recipe, and post that client's name and matching restriction(ingredient) in the recipe show page. 
 
 7. Create similar helper(class? scope?) method to match a recipe's allergy attribute to a client's restriction, and similarly display the client and matching restriciton in the recipe show page.
 
-8. Look up normalize before_action 
+[x] 8. Look up normalize before_action. -> not necessary. Put it in views/recipe/show to normalize meal type name.
+
+9. Don't forget OmniAuth! Daniel says he prefers google I think.
 
 
 #MOVED OUT OF USERS/NEW.HTML.ERB for now.
