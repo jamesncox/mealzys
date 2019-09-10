@@ -1,4 +1,6 @@
-<%# First argument in form cannot contain nil or be empty, the error is here on line 3 %>
+<% if flash[:message] %>
+  <%= flash[:message] %>
+<% end %>
 
 <%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do |f| %>
 

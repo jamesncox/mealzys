@@ -6,12 +6,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      # flash[:notice] = "You signed up successfully"
-      # flash[:color]= "valid"
       redirect_to root_path
     else 
-      # flash[:notice] = "Form is invalid"
-      # flash[:color]= "invalid"
+      flash[:message] = "Login failed."
       render :new
     end
   end
@@ -22,5 +19,4 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :password, :password_confirmation)
     end
 
-    # tdxrfhswedfsdafgg
 end
