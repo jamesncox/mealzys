@@ -157,6 +157,8 @@ end # return all recipes with name as a restriction would need to be a form, i'd
 
       end 
 
-second test commit blah blah blah blah
-more test commits
-      
+# view/recipe/show
+
+<p><label>Recipe Allergies: </label><%= @recipe.allergy %></p>
+
+<%= find_restrictions(@clients, @recipe) %>
