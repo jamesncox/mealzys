@@ -17,18 +17,38 @@
     <%= f.label :serves, "Serving Size: "%>
     <%= f.number_field :serves %></p>
 
-    <%= f.fields_for :ingredients do |ing|  %>
+        <%= f.fields_for :ingredients do |ing|  %>
        
-       <%= ing.label :name, "Ingredient: " %>
-       <%= ing.text_field :name %>
+            <%= ing.label :name, "Ingredient: " %>
+            <%= ing.text_field :name %>
 
-       <%= ing.label :quantity, "Quantity: " %>
-       <%= ing.text_field :quantity %>
+            <%= ing.label :quantity, "Quantity: " %>
+            <%= ing.text_field :quantity %>
        
-       <%= ing.label :unit, "Unit: " %>
-       <%= ing.text_field :unit %>
+            <%= ing.label :unit, "Unit: " %>
+            <%= ing.text_field :unit %>
+
 
     <% end %>
+
+    <% if params[:action] == "edit" %>
+    <h1>New </h1>
+    <% 20.times do %>
+        <%= f.fields_for :ingredients do |ing|  %>
+       
+            <%= ing.label :name, "Ingredient: " %>
+            <%= ing.text_field :name, value: "" %>
+
+            <%= ing.label :quantity, "Quantity: " %>
+            <%= ing.text_field :quantity, value: "" %>
+       
+            <%= ing.label :unit, "Unit: " %>
+            <%= ing.text_field :unit, value: "" %>
+
+
+    <% end %>
+        <% end %>
+        <% end %>
 
     <p><%= f.label :instructions, "Instructions: " %>
     <%= f.text_area :instructions, size: "105x5" %></p>

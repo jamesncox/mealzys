@@ -4,34 +4,39 @@ module RecipesHelper
     #then an if statement if true (matches) the client name and shovel <<
 
     # danger = {"Tiffany"=> [dairy, gluten, mushrooms]} clients, clients.restrcitions
-
-    
-    def find_restrictions(clients, recipe)
-        danger = []
-        client_res = []
+    def find_restrictions(clients, recipe) # create hash for clients and array of their restrictiopns
+       res_hash = {}
          clients.each do |client| 
             client.restrictions.each do |res|
                 recipe.ingredients.each do |ing|
                     allergy_to_array(recipe).each do |allergy|
                         if res.name == ing.name || res.name == allergy
-                            danger << res 
-                            client_res << client
+                           if !res_hash["#{client.name}"] 
+                                res_hash["#{client.name}"] = []
+                           end 
+                           res_hash["#{client.name}"] << res if !res_hash["#{client.name}"].any?(res)  
                         end   
                     end 
                 end
             end 
          end 
-        render_restrictions(danger, client_res)
+        render_restrictions(res_hash)
     end 
 
-    def allergy_to_array(recipe)
+    def allergy_to_array(recipe) # build array to check ingredients for addt restrictions
         allergies = recipe.allergy.split(", ")
     end 
 
-    def render_restrictions(ingredients, clients)
-        ingredients.each do |ing|
-            "#{ing.name}"
+    def render_restrictions(res_hash) # display list of restrictions
+        str = ''
+        res_hash.each do |client, res_obj|
+            res_obj.each do |res|
+                str << "<ul> 
+                <li><strong>#{client}</strong>: <em>#{res.name}</em></li> 
+                </ul>"
+            end 
         end 
+        str.html_safe
     end 
 
 end

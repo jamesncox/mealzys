@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
 
-    before_action :uniform_meal_name, only: [:create]
+    before_action :uniform_meal_name, only: [:create, :update]
 
     def show
         @recipe = Recipe.find(params[:id])
@@ -23,7 +23,6 @@ class RecipesController < ApplicationController
 
     def create
         @recipe = Recipe.new (recipe_params)
-
         if @recipe.save 
             redirect_to @recipe
         else
@@ -34,11 +33,11 @@ class RecipesController < ApplicationController
     def edit 
         #ask DJ if .find or .find_by is, in his opinion, better, and help explain the difference again.
         @recipe = Recipe.find(params[:id])
-        20.times { @recipe.ingredients.build }
     end
 
     def update
         @recipe = Recipe.find(params[:id])
+        byebug
         if @recipe.update(recipe_params)
             redirect_to recipe_path(@recipe)
         else
@@ -65,7 +64,8 @@ class RecipesController < ApplicationController
         end
 
         def uniform_meal_name 
+            params[:recipe][:name] = params[:recipe][:name].downcase 
             params[:recipe][:meal] = params[:recipe][:meal].downcase
-            
+            params[:recipe][:allergy] =  params[:recipe][:allergy].downcase
         end 
 end
