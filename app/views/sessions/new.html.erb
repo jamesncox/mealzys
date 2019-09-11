@@ -1,8 +1,15 @@
+<h1> Sign Up </h1>
+
+<%= button_to "New User Signup", new_user_path, :method => "get" %>
+
+<h4> OR </h4>
+
+<h1> Log In </h1>
+
 <% if flash[:message] %>
   <%= flash[:message] %>
 <% end %>
 
-<h1>Login</h1>
 <%= form_tag login_path %>
 
   <div class="field">
@@ -14,9 +21,5 @@
     <%= password_field_tag :password %>
   </div>
   <div class=”actions”>
-    <%= submit_tag :login %>
+    <%= submit_tag "Log In" %>
   </div>
-
-Or<br>
-
-<%= link_to "New User Signup", new_user_path, class: "form-button" %>

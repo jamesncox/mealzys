@@ -1,3 +1,5 @@
+<h1> New User Signup </h1>
+
 <% if flash[:message] %>
   <%= flash[:message] %>
 <% end %>
@@ -22,4 +24,4 @@
   <%= f.submit "Create New User" %>
 <% end %>
 
-<p><%= button_to "Homepage", root_path, :method => "get" %></p>
+<p><%= button_to "Back to Login", login_path, :method => "get" %></p>
