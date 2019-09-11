@@ -1,9 +1,17 @@
 <h1>View Your Client's Restrictions</h1>
 
-<% @restrictions.each do |restriction| %>
-    <ul>
-    <%= link_to restriction.name, "restrictions/#{restriction.id}" %>
-    </ul>
-<% end %>
+<section class="todoapp">
+	<section class="main" style="display: block;">
+		<ul class="todo-list">
+
+            <% @restrictions.each do |restriction| %>
+                <ul>
+                <%= link_to restriction.name, "restrictions/#{restriction.id}" %>
+                </ul>
+            <% end %>
+
+            </ul>
+	</section>
+</section>
 
 <p><%= button_to "Homepage", root_path, :method => "get" %></p>

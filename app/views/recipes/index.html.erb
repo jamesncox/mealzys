@@ -1,16 +1,24 @@
 <h1>Your Recipes</h1>
 
-<h3><font color="CornFlowerBlue">Breakfasts:</font></h3>
+<section class="todoapp">
+	<section class="main" style="display: block;">
+		<ul class="todo-list">
 
-<%= render partial: "recipe_meal", locals: {meals: @recipes.food_by_meal("breakfast") } %>
+            <h3><font color="CornFlowerBlue">Breakfasts:</font></h3>
 
-<h3><font color="CornFlowerBlue">Lunches:</font></h3>
+            <%= render partial: "recipe_meal", locals: {meals: @recipes.food_by_meal("breakfast") } %>
 
-<%= render partial: "recipe_meal", locals: {meals: @recipes.food_by_meal("lunch") } %>
+            <h3><font color="CornFlowerBlue">Lunches:</font></h3>
 
-<h3><font color="CornFlowerBlue">Dinners:</font></h3>
+            <%= render partial: "recipe_meal", locals: {meals: @recipes.food_by_meal("lunch") } %>
 
-<%= render partial: "recipe_meal", locals: {meals: @recipes.food_by_meal("dinner") } %>
+            <h3><font color="CornFlowerBlue">Dinners:</font></h3>
+
+            <%= render partial: "recipe_meal", locals: {meals: @recipes.food_by_meal("dinner") } %>
+
+        </ul>
+	</section>
+</section>
 
 <p><%= button_to "Create a Recipe", new_recipe_path, :method => "get" %></p>
 
