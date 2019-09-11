@@ -6,7 +6,8 @@
 
 <section class="todoapp">
 	<section class="main" style="display: block;">
-		<ul class="todo-list">
+        <ul class="todo-list">
+        
         <%= table_for @recipe.ingredients do -%>
           <% columns :name, :quantity, :unit %>
         <% end %>
@@ -14,7 +15,7 @@
         <h4><label>Instructions: </label></h4>
         <%= @recipe.instructions %>
 
-    </ul>
+        </ul>
 	</section>
 </section>
 
@@ -28,7 +29,7 @@
         <h4> Client Restrictions: </h4>
         <%= find_restrictions(@clients, @recipe) %>
 
-    </ul>
+        </ul>
 	</section>
 </section>
 

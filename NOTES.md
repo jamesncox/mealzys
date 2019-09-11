@@ -127,3 +127,24 @@ end # return all recipes with name as a restriction would need to be a form, i'd
 gem install shutup
 
 run "shutup"
+
+# moved update form builder out of /recipe/_form.html.erb 
+
+ <% if params[:action] == "edit" %>
+    <h1>New </h1>
+    <% 20.times do %>
+        <%= f.fields_for :ingredients do |ing|  %>
+       
+            <%= ing.label :name, "Ingredient: " %>
+            <%= ing.text_field :name, value: "" %>
+
+            <%= ing.label :quantity, "Quantity: " %>
+            <%= ing.text_field :quantity, value: "" %>
+       
+            <%= ing.label :unit, "Unit: " %>
+            <%= ing.text_field :unit, value: "" %>
+
+
+      <% end %>
+    <% end %>
+<% end %>

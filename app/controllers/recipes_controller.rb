@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
 
-    before_action :uniform_meal_name, only: [:create, :update]
+    before_action :uniform_meal_name, only: [:create]
 
     def show
         @recipe = Recipe.find(params[:id])
