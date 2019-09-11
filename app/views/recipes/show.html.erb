@@ -12,8 +12,21 @@
           <% columns :name, :quantity, :unit %>
         <% end %>
 
-        <h3><label>Instructions: </label></h3>
-        <p><%= @recipe.instructions %></p>
+        <h4><label>Instructions: </label></h4>
+        <%= @recipe.instructions %>
+
+    </ul>
+	</section>
+</section>
+
+<section class="todoapp">
+	<section class="main" style="display: block;">
+		<ul class="todo-list">
+
+        <h4><%= @recipe.name %> Allergens:</h4> 
+        <%= @recipe.allergy %></h4>
+
+        <p> ** SHOW CLIENT'S INDIVIDUAL ALLERGIES HERE (as they relate to specific recipe) **</p>
 
     </ul>
 	</section>
