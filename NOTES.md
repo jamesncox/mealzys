@@ -121,3 +121,9 @@ end # return all recipes with name as a restriction would need to be a form, i'd
 <p><label>Recipe Allergies: </label><%= @recipe.allergy %></p>
 
 <%= find_restrictions(@clients, @recipe) %>
+
+# to kill a server running in the background
+
+gem install shutup
+
+run "shutup"
