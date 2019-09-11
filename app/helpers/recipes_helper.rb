@@ -32,7 +32,7 @@ module RecipesHelper
         res_hash.each do |client, res_obj|
             res_obj.each do |res|
                 str << "<ul> 
-                <li><strong>#{client}</strong>: <em>#{res.name}</em></li> 
+                <li>#{client}: <em>#{res.name.humanize}</em></li> 
                 </ul>"
             end 
         end 

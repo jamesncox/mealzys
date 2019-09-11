@@ -23,7 +23,7 @@
 		<ul class="todo-list">
 
         <h4><%= @recipe.name %> Allergens:</h4> 
-        <p><%= @recipe.allergy %></p>
+        <p><%= @recipe.allergy.humanize %></p>
 
         <h4> Client Restrictions: </h4>
         <%= find_restrictions(@clients, @recipe) %>

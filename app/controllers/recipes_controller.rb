@@ -11,11 +11,6 @@ class RecipesController < ApplicationController
         @recipes = Recipe.where(user: current_user)
     end
 
-    # def index
-    #     @color = params[:color] #this could be data you get from a form
-    #     @shirts = Shirt.colored(@color)
-    #   end
-
     def new 
         @recipe = Recipe.new
         20.times { @recipe.ingredients.build }
@@ -37,7 +32,6 @@ class RecipesController < ApplicationController
 
     def update
         @recipe = Recipe.find(params[:id])
-        byebug
         if @recipe.update(recipe_params)
             redirect_to recipe_path(@recipe)
         else
@@ -64,7 +58,7 @@ class RecipesController < ApplicationController
         end
 
         def uniform_meal_name 
-            params[:recipe][:name] = params[:recipe][:name].downcase 
+            params[:recipe][:name] = params[:recipe][:name]
             params[:recipe][:meal] = params[:recipe][:meal].downcase
             params[:recipe][:allergy] =  params[:recipe][:allergy].downcase
         end 
