@@ -1,15 +1,20 @@
 Rails.application.routes.draw do
   resources :restrictions
-  resources :measurements
   resources :ingredients
   resources :recipes
   resources :clients
-  resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  delete '/logout' => 'sessions#destroy'
+  # get '/login' => 'sessions#new'
+  # post '/login' => 'sessions#create'
+  # delete '/logout' => 'sessions#destroy'
+
+  # the following is for omniauth-google routes
+  get 'login', to: redirect('/auth/google_oauth2'), as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  # get 'home', to: 'home#show'
+  # get 'me', to: 'me#show', as: 'me'
 
   # get '/auth/:provider/callback' => 'sessions#create'
   # get '/signin' => 'sessions#new', :as => :signin
