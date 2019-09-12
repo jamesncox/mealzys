@@ -95,6 +95,9 @@ end # return all recipes with name as a restriction would need to be a form, i'd
 
 9. Don't forget OmniAuth! Daniel says he prefers google I think.
 
+10. Eventually create a Measurement model with attributes :unit, :quantity 
+    a. will create a dropdown for unit, quantity and ingredient objects with blank fields.
+
 # Using Terminal to commit and push changes ...
 
   git add . add new files 

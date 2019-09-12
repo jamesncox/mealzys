@@ -18,6 +18,7 @@ class RecipesController < ApplicationController
 
     def create
         @recipe = Recipe.new (recipe_params)
+        # binding.pry
         if @recipe.save 
             redirect_to @recipe
         else
@@ -28,10 +29,12 @@ class RecipesController < ApplicationController
     def edit 
         #ask DJ if .find or .find_by is, in his opinion, better, and help explain the difference again.
         @recipe = Recipe.find(params[:id])
+        10.times { @recipe.ingredients.build }
     end
 
     def update
         @recipe = Recipe.find(params[:id])
+        @recipe.ingredients.delete_all
         if @recipe.update(recipe_params)
             redirect_to recipe_path(@recipe)
         else
