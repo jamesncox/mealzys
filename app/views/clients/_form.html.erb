@@ -5,9 +5,17 @@
     <%= f.fields_for :restrictions do |r|  %>
        
        <br><%= r.label :name, "Restriction: " %>
-       <%= r.text_field :name %>
+       
+       <%= r.collection_select(:name, Restriction.all, :name, :name, :include_blank => true) %>
 
     <% end %>
+
+    <%= f.fields_for :restrictions do |r|  %>
+       
+        <br><%= r.label :name, "Restriction: " %>
+         <%= r.text_field :name %>
+         
+     <% end %>
 
     <p><%= f.submit %></p>
 <% end %>
