@@ -24,10 +24,12 @@ class ClientsController < ApplicationController
 
     def edit
         @client = Client.find(params[:id])
+        5.times { @client.restrictions.build }
     end
 
     def update
         @client = Client.find(params[:id])
+        @client.restrictions.delete_all
         if @client.update(client_params)
             redirect_to client_path(@client)
         else

@@ -26,10 +26,9 @@
             <%= ing.text_field :quantity %>
     
             <%= ing.label :unit, "Unit: " %>
-            <%= ing.text_field :unit %>
+            <%= ing.text_field :unit %><br>
 
         <% end %>
-        <br>
         <br>
         <%= f.fields_for :ingredients do |ing|  %>
        
