@@ -151,3 +151,9 @@ run "shutup"
       <% end %>
     <% end %>
 <% end %>
+
+# different f.select options
+
+ <%#= ing.collection_select(:name, Ingredient.all.sort, :name, :name, :include_blank => true) %>
+
+ <%= ing.select :name, options_from_collection_for_select(Ingredient.order("name ASC"), :name, :name), :prompt => 'Select' %>
