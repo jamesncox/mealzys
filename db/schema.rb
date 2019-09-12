@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_12_210823) do
+ActiveRecord::Schema.define(version: 2019_09_12_222714) do
 
   create_table "client_restrictions", force: :cascade do |t|
     t.integer "client_id"
@@ -71,6 +71,8 @@ ActiveRecord::Schema.define(version: 2019_09_12_210823) do
     t.string "email"
     t.string "first_name"
     t.string "last_name"
+    t.string "google_token"
+    t.string "google_refresh_token"
   end
 
 end
