@@ -30,7 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pry'
 
 gem 'omniauth'
-gem 'omniauth-google'
+gem 'omniauth-google-oauth2'
 
 #table generator gem for recipe views
 gem 'table_for_collection'
