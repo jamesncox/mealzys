@@ -35,7 +35,6 @@ gem 'omniauth-google-oauth2'
 #table generator gem for recipe views
 gem 'table_for_collection'
 
-
 # normalize meal names
 gem 'normalize-rails'
 
