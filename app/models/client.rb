@@ -2,6 +2,9 @@ class Client < ApplicationRecord
     has_many :client_restrictions
     has_many :restrictions, through: :client_restrictions
 
+    validates :name, presence: true 
+    validates :name, uniqueness: true
+
     # accepts_nested_attributes_for :restrictions
 
     def restrictions_attributes=(restrictions_attributes)
