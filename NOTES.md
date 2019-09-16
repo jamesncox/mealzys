@@ -67,39 +67,6 @@ def self.has_restriction(name)
   where(restriction: "#{name}")
 end # return all recipes with name as a restriction would need to be a form, i'd use form tag  
 
-
-#STILL TO DO:
-
-[x] 1. Create the "tags" for recipe_ingredients model (maybe the clients_restrictions model instead?)
-    Then we can link these to recipes with dropdown boxes to select generic/common types of allergies.
-    Actually, I just created an :allergy attribute of Recipe model, to associate those to client's matching restriction.
-
-[x] 2. Stub out / hardcode some features I'd like to see in my views to wrap my brain around what I have still to do...
-[x]  a. add category to recipe for breakfast/lunch/dinner
-  b. add dynamic list of clients and their restrictions to recipe show page
-[x] c. change the recipe show page list of ingredients, etc. into an actual table with rows/columns?
-[x]  d. write scope method in Recipe model to sort by breakfast, lunch, dinner in the index view.
-
-[x] 3. My sessions controller and/or user controllers are not doing what they're supposed to be doing... when I click login, I'll get directed to my homepage, but if I click new user signup I also get directed to my homepage as if i were already logged in.
-  a. stlye the button whenever...
-
-[x] 4. Create error messages for when logging in/signing up goes wrong.
-
-[x] 5. Abstract the meal_type partial into a helper method? -> Not necessary. Mark complete.
-
-[x] 6. Create helper(class?) method to take a client's restriction and look for an ingredient in a recipe, and post that client's name and matching restriction(ingredient) in the recipe show page. 
-
-[x] 7. Create similar helper(class? scope?) method to match a recipe's allergy attribute to a client's restriction, and similarly display the client and matching restriciton in the recipe show page.
-
-[x] 8. Look up normalize before_action. -> not necessary. Put it in views/recipe/show to normalize meal type name.
-
-9. Don't forget OmniAuth! Daniel says he prefers google I think.
-
-10. Eventually create a Measurement model with attributes :unit, :quantity 
-    a. will create a dropdown for unit, quantity and ingredient objects with blank fields.
-
-11. Update views/recipes/_form.html.erb to display 10(ish) fields for the ingredients/quantity/unit instead of using the times loop in the controller. Trying to fix the issue of having some data persisted during update.
-
 # Using Terminal to commit and push changes ...
 
   git add . add new files 
@@ -158,4 +125,42 @@ run "shutup"
 
  <%#= ing.collection_select(:name, Ingredient.all.sort, :name, :name, :include_blank => true) %>
 
- <%= ing.select :name, options_from_collection_for_select(Ingredient.order("name ASC"), :name, :name), :prompt => 'Select' %>
+ <%= ing.select :name, options_from_collection_for_select(Ingredient.order("name ASC"), :name, :name), :prompt => 'Select' %> 
+
+
+# ##########################################################################################################################
+
+
+ # STILL TO DO:
+
+[x] 1. Create the "tags" for recipe_ingredients model (maybe the clients_restrictions model instead?)
+    Then we can link these to recipes with dropdown boxes to select generic/common types of allergies.
+    Actually, I just created an :allergy attribute of Recipe model, to associate those to client's matching restriction.
+
+[x] 2. Stub out / hardcode some features I'd like to see in my views to wrap my brain around what I have still to do...
+[x]  a. add category to recipe for breakfast/lunch/dinner
+  b. add dynamic list of clients and their restrictions to recipe show page
+[x] c. change the recipe show page list of ingredients, etc. into an actual table with rows/columns?
+[x]  d. write scope method in Recipe model to sort by breakfast, lunch, dinner in the index view.
+
+[x] 3. My sessions controller and/or user controllers are not doing what they're supposed to be doing... when I click login, I'll get directed to my homepage, but if I click new user signup I also get directed to my homepage as if i were already logged in.
+  a. stlye the button whenever...
+
+[x] 4. Create error messages for when logging in/signing up goes wrong.
+
+[x] 5. Abstract the meal_type partial into a helper method? -> Not necessary. Mark complete.
+
+[x] 6. Create helper(class?) method to take a client's restriction and look for an ingredient in a recipe, and post that client's name and matching restriction(ingredient) in the recipe show page. 
+
+[x] 7. Create similar helper(class? scope?) method to match a recipe's allergy attribute to a client's restriction, and similarly display the client and matching restriciton in the recipe show page.
+
+[x] 8. Look up normalize before_action. -> not necessary. Put it in views/recipe/show to normalize meal type name.
+
+9. Don't forget OmniAuth! Daniel says he prefers google I think.
+
+10. Eventually create a Measurement model with attributes :unit, :quantity 
+    a. will create a dropdown for unit, quantity and ingredient objects with blank fields.
+
+11. Update views/recipes/_form.html.erb to display 10(ish) fields for the ingredients/quantity/unit instead of using the times loop in the controller. Trying to fix the issue of having some data persisted during update.
+
+12. Add validations for restrictions so a user has to choose an already create restriction instead of creating same one multiple times.
