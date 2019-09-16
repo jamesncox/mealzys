@@ -1,4 +1,19 @@
 <%= form_for @restriction do |f| %>
+
+    <% if @restriction.errors.any? %>
+        <% @restriction.errors.full_messages.each do |msg| %>
+            <%= msg %>
+        <% end %>
+    <% end %>
+
+    <%= f.fields_for :restrictions do |r|  %>
+       
+        <br><%= r.label :name, "Restriction: " %>
+        
+        <%= r.collection_select(:name, Restriction.all, :name, :name, :include_blank => true) %>
+ 
+     <% end %>
+
     <p><%= f.label :name, "Restriction Type: "%>
     <%= f.text_field :name %></p>
 

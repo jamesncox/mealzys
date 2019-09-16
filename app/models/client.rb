@@ -5,8 +5,6 @@ class Client < ApplicationRecord
     validates :name, presence: true 
     validates :name, uniqueness: true
 
-    # accepts_nested_attributes_for :restrictions
-
     def restrictions_attributes=(restrictions_attributes)
         restrictions_attributes.map do |attr|
             attr.each do |res|

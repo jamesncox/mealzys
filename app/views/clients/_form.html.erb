@@ -1,4 +1,11 @@
 <%= form_for @client do |f| %>
+
+    <% if @client.errors.any? %>
+        <% @client.errors.full_messages.each do |msg| %>
+            <%= msg %>
+        <% end %>
+    <% end %>
+
     <p><%= f.label :name, "Client Name: "%>
     <%= f.text_field :name %></p>
 
