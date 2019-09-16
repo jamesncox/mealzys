@@ -87,9 +87,9 @@ end # return all recipes with name as a restriction would need to be a form, i'd
 
 [x] 5. Abstract the meal_type partial into a helper method? -> Not necessary. Mark complete.
 
-6. Create helper(class?) method to take a client's restriction and look for an ingredient in a recipe, and post that client's name and matching restriction(ingredient) in the recipe show page. 
+[x] 6. Create helper(class?) method to take a client's restriction and look for an ingredient in a recipe, and post that client's name and matching restriction(ingredient) in the recipe show page. 
 
-7. Create similar helper(class? scope?) method to match a recipe's allergy attribute to a client's restriction, and similarly display the client and matching restriciton in the recipe show page.
+[x] 7. Create similar helper(class? scope?) method to match a recipe's allergy attribute to a client's restriction, and similarly display the client and matching restriciton in the recipe show page.
 
 [x] 8. Look up normalize before_action. -> not necessary. Put it in views/recipe/show to normalize meal type name.
 
@@ -97,6 +97,8 @@ end # return all recipes with name as a restriction would need to be a form, i'd
 
 10. Eventually create a Measurement model with attributes :unit, :quantity 
     a. will create a dropdown for unit, quantity and ingredient objects with blank fields.
+
+11. Update views/recipes/_form.html.erb to display 10(ish) fields for the ingredients/quantity/unit instead of using the times loop in the controller. Trying to fix the issue of having some data persisted during update.
 
 # Using Terminal to commit and push changes ...
 
