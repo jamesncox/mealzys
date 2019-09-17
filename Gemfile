@@ -34,7 +34,7 @@ gem 'omniauth'
 #comment out Google sign-in code for now
 # gem 'omniauth-google-oauth2'
 
-gem 'omniauth-github'
+# gem 'omniauth-github'
 
 #table generator gem for recipe views
 gem 'table_for_collection'

@@ -9,7 +9,7 @@ class User < ApplicationRecord
                         :length => { minimum: 6 }
 
 	has_secure_password
-	
+
 	#comment out Google sign-in code for now
 	# def self.from_omniauth(auth)
 	# 	# Creates a new user only if it doesn't exist

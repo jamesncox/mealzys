@@ -9,9 +9,6 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
-  get "/auth/:provider/callback" => "sessions#create"
-  get "/signout" => "sessions#destroy", :as => :signout
-
   #comment out Google sign-in code for now
 
   # get 'auth/:provider/callback', to: 'sessions#googleAuth'

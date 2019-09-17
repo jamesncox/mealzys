@@ -12,6 +12,11 @@ class SessionsController < ApplicationController
         render :new
       end
     end
+   
+    def destroy
+      session[:user_id] = nil
+      redirect_to root_url, :notice => "Signed out!"
+    end
 
     #comment out Google sign-in code for now
 
@@ -30,7 +35,7 @@ class SessionsController < ApplicationController
     end
 
     #comment out Google sign-in code for now
-    
+
     # def googleAuth
     #   # Get access tokens from the google server
     #   access_token = request.env["omniauth.auth"]
