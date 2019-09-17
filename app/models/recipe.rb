@@ -6,8 +6,6 @@ class Recipe < ApplicationRecord
     validates :name, uniqueness: true
     validates :name, presence: true
 
-    # validates :allergy, uniqueness: true
-
     scope :food_by_meal, -> (meal) {where(meal: meal)}
 
     def ingredients_attributes=(ingredients_attributes)
