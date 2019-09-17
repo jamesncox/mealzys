@@ -10,13 +10,14 @@ class User < ApplicationRecord
 
 	has_secure_password
 	
-	def self.from_omniauth(auth)
-		# Creates a new user only if it doesn't exist
-		where(email: auth.info.email).first_or_initialize do |user|
-		  user.name = auth.info.name
-		  user.email = auth.info.email
-		end
-	end
+	#comment out Google sign-in code for now
+	# def self.from_omniauth(auth)
+	# 	# Creates a new user only if it doesn't exist
+	# 	where(email: auth.info.email).first_or_initialize do |user|
+	# 	  user.name = auth.info.name
+	# 	  user.email = auth.info.email
+	# 	end
+	# end
 
     # def self.find_or_create_from_auth_hash(auth)
 	# 	where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
@@ -29,8 +30,5 @@ class User < ApplicationRecord
 	# 		user.save!
 	# 	end
 	# end
-
-    private
-    
 
 end

@@ -26,7 +26,6 @@ Look over form_tag syntax for login
 
 
 
-
 CRAPPY NEW RECIPE FORM
 
  <%= form_for @recipe do |f| %>
@@ -126,6 +125,9 @@ run "shutup"
  <%#= ing.collection_select(:name, Ingredient.all.sort, :name, :name, :include_blank => true) %>
 
  <%= ing.select :name, options_from_collection_for_select(Ingredient.order("name ASC"), :name, :name), :prompt => 'Select' %> 
+
+ # moved the Google sign-in html link to notes for now...
+ <a href="/auth/google_oauth2"><button>Sign In With Google</button></a>
 
 
 # ##########################################################################################################################
