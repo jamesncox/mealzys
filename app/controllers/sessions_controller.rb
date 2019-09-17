@@ -12,8 +12,9 @@ class SessionsController < ApplicationController
         render :new
       end
     end
-    
+
     #comment out Google sign-in code for now
+
     # def create
     #   auth = request.env["omniauth.auth"]
     #   if auth
@@ -29,6 +30,7 @@ class SessionsController < ApplicationController
     end
 
     #comment out Google sign-in code for now
+    
     # def googleAuth
     #   # Get access tokens from the google server
     #   access_token = request.env["omniauth.auth"]
