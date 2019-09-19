@@ -9,10 +9,9 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
-  #comment out Google sign-in code for now
-
-  # get 'auth/:provider/callback', to: 'sessions#googleAuth'
-  # get 'auth/failure', to: redirect('/')
+  get 'auth/:provider/callback', to: 'sessions#googleAuth'
+  get '/auth/google_oauth2', to: 'sessions#googleAuth'
+  get 'auth/failure', to: redirect('/')
 
   root 'welcome#home'
 end

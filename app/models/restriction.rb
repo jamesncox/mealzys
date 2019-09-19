@@ -4,4 +4,5 @@ class Restriction < ApplicationRecord
 
     validates :name, uniqueness: {message: "Please select an existing restriction from the drop down menu."}
 
+    #create custom method to find_or_create_by etc...
 end

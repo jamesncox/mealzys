@@ -158,11 +158,9 @@ run "shutup"
 
 [x] 8. Look up normalize before_action. -> not necessary. Put it in views/recipe/show to normalize meal type name.
 
-9. Don't forget OmniAuth! Daniel says he prefers google I think.
+[x] 9. Don't forget OmniAuth! Daniel says he prefers google I think.
 
 10. Eventually create a Measurement model with attributes :unit, :quantity 
     a. will create a dropdown for unit, quantity and ingredient objects with blank fields.
 
-11. Update views/recipes/_form.html.erb to display 10(ish) fields for the ingredients/quantity/unit instead of using the times loop in the controller. Trying to fix the issue of having some data persisted during update.
-
-12. Add validations for restrictions so a user has to choose an already create restriction instead of creating same one multiple times.
+11. Add validations for restrictions so a user has to choose an already create restriction instead of creating same one multiple times.
