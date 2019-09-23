@@ -1,25 +1,17 @@
-# README
+# Mealzys
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+With Mealzys, you can create an account and manage your recipes, your clients and their allergies!
 
-Things you may want to cover:
+## Usage
 
-* Ruby version
+To use this app, just clone, run "rake db:migrate" and then run "rails s". Navigate to "http://localhost:3000" and then follow the homepage instructions to signup or login! 
 
-* System dependencies
+## Contributing
 
-* Configuration
+Bug reports and pull requests are welcome on GitHub at https://github.com/jamesncox/mealzys. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
-* Database creation
 
-* Database initialization
+## License
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
