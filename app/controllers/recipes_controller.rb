@@ -26,7 +26,6 @@ class RecipesController < ApplicationController
     end
 
     def edit 
-        #ask DJ if .find or .find_by is, in his opinion, better, and help explain the difference again.
         @recipe = Recipe.find(params[:id])
         10.times { @recipe.ingredients.build }
     end
