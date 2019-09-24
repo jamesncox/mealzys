@@ -46,6 +46,11 @@ class RecipesController < ApplicationController
         redirect_to recipes_path
     end
 
+    # create a search method that queries the databashe with where for Recipe allergy and display it with corresponding view.
+    # def search
+    #     @recipe = Recipe.all()
+    # end
+
     private
         # nested form lab, adding ingredients attributes to recipe_params
         def recipe_params

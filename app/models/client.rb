@@ -13,5 +13,4 @@ class Client < ApplicationRecord
         end 
     end 
 
-
 end
