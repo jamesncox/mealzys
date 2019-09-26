@@ -1,4 +1,6 @@
 class ClientsController < ApplicationController
+    before_action :require_login
+    
     def show 
         @client = Client.find(params[:id])
     end 
@@ -14,7 +16,6 @@ class ClientsController < ApplicationController
 
     def create
         @client = Client.new(client_params)
-        # binding.pry
         if @client.save
             redirect_to @client
         else 
@@ -40,7 +41,6 @@ class ClientsController < ApplicationController
     def destroy
         @client = Client.find(params[:id])
         @client.destroy
-        #binding.pry
         redirect_to clients_path
       end
       
@@ -52,5 +52,9 @@ class ClientsController < ApplicationController
                     :id
                 ]
             )
+        end
+
+        def require_login
+            return head(:forbidden) unless session.include? :user_id
         end
 end

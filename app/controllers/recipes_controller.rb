@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-
+    before_action :require_login
     before_action :uniform_meal_name, only: [:create]
 
     def show
@@ -8,7 +8,12 @@ class RecipesController < ApplicationController
     end 
 
     def index
-        @recipes = Recipe.where(user: current_user)
+        # @recipes = Recipe.search(params[:allergy]).where(user: current_user)
+        if params[:allergy]
+            @recipe = Recipe.where('allergy LIKE ?', "%#{params[:allergy]}%")
+        else
+            @recipes = Recipe.where(user: current_user)
+        end
     end
 
     def new 
@@ -46,15 +51,16 @@ class RecipesController < ApplicationController
         redirect_to recipes_path
     end
 
-    # create a search method that queries the databashe with where for Recipe allergy and display it with corresponding view.
-    # def search
-    #     @recipe = Recipe.all()
-    # end
+    # create a search method that queries the database with where for Recipe allergy and display it with corresponding view.
+    def search
+        binding.pry
+        @recipe = Recipe.where
+    end
 
     private
-        # nested form lab, adding ingredients attributes to recipe_params
+       
         def recipe_params
-            params.require(:recipe).permit(:name, :serves, :instructions, :user_id, :meal, :allergy,
+            params.require(:recipe).permit(:name, :serves, :instructions, :user_id, :meal, :allergy, :search,
                 ingredients_attributes: [
                     :name, 
                     :quantity,
@@ -68,4 +74,8 @@ class RecipesController < ApplicationController
             params[:recipe][:meal] = params[:recipe][:meal].downcase
             params[:recipe][:allergy] =  params[:recipe][:allergy].downcase
         end 
+
+        def require_login
+            return head(:forbidden) unless session.include? :user_id
+        end
 end

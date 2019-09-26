@@ -14,7 +14,8 @@ class SessionsController < ApplicationController
     end
 
     def destroy
-      session.delete :user_id
+      reset_session
+      # session.delete :user_id
       @user.google_token.delete
       redirect_to '/'
     end

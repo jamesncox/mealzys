@@ -20,12 +20,9 @@
 	</section>
 </section>
 
-<%= form_with(url: "/search", method: "get") do %>
-
-    <%=label_tag(:q, "Search for:") %>
-    <%= text_field_tag(:q) %>
-    <%= submit_tag("Search") %>
-    
+<%= form_tag(recipes_path, method: :get) do %>
+    <%= text_field_tag :allergy, params[:allergy] %>
+    <%= submit_tag 'Search', name: nil %>
 <% end %>
 
 <p><%= button_to "Create a Recipe", new_recipe_path, :method => "get" %></p>

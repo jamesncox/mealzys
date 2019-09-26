@@ -22,4 +22,12 @@ class Recipe < ApplicationRecord
         end 
     end 
 
+    # def self.search(allergy)
+    #     if allergy
+    #         where('name LIKE ?', "%#{allergy}%")
+    #     else
+    #         all
+    #     end
+    # end 
+
 end

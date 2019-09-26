@@ -1,4 +1,6 @@
 class RestrictionsController < ApplicationController
+    before_action :require_login
+
     def show 
         @restriction = Restriction.find(params[:id])
     end 
@@ -49,5 +51,9 @@ class RestrictionsController < ApplicationController
                     :id
                 ]
             )
+        end
+
+        def require_login
+            return head(:forbidden) unless session.include? :user_id
         end
 end
