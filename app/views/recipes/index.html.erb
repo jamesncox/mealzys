@@ -20,6 +20,7 @@
 	</section>
 </section>
 
+<h4>Filter recipes by allergy: </h4>
 <%= form_tag(recipes_path, method: :get) do %>
     <%= text_field_tag :allergy, params[:allergy] %>
     <%= submit_tag 'Search', name: nil %>

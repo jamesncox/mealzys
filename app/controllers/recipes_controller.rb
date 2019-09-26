@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
     def index
         # @recipes = Recipe.search(params[:allergy]).where(user: current_user)
         if params[:allergy]
-            @recipe = Recipe.where('allergy LIKE ?', "%#{params[:allergy]}%")
+            @recipes = Recipe.where('allergy LIKE ?', "%#{params[:allergy]}%")
         else
             @recipes = Recipe.where(user: current_user)
         end
