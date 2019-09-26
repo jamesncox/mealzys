@@ -2,15 +2,14 @@ Rails.application.routes.draw do
 
   #create a nested route
 
-  resources :restrictions
   resources :ingredients
   resources :recipes
   resources :clients
   resources :users
 
-  # resources :clients, only [:show] do
-  #   resource :restrictions, only [:show, :index]
-  # end
+  resources :clients, only: [:show] do
+    resources :restrictions, only: [:show, :index, :new, :create]
+  end
 
   get '/recipes/search' => 'recipes#search'
 

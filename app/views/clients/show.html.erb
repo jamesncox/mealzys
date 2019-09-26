@@ -6,7 +6,7 @@
 		<ul class="todo-list">
 
             <% @client.restrictions.each do |attr| %>
-            <p><%= attr.name %></p>
+            <p><%= link_to attr.name, client_restriction_path(@client, attr) %></p>
             <% end %>
 
         </ul>

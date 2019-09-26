@@ -18,14 +18,16 @@ class RestrictionsController < ApplicationController
     # end
 
     def new
+        @client = Client.find(params[:client_id])
         @restriction = Restriction.new
     end
 
     def create
-        @restriction = Restriction.new(restriction_params)
-
-        if @restriction.save
-            redirect_to @restriction
+        @client = Client.find(params[:client_id])
+        @client.restrictions.build(restriction_params)
+        binding.pry
+        if @client.save
+            redirect_to @client
         else 
             render :new 
         end
@@ -53,11 +55,11 @@ class RestrictionsController < ApplicationController
       
     private
         def restriction_params
-            params.require(:restriction).permit(:name,
-                restrictions_attributes: [
-                    :name,
-                    :id
-                ]
+            params.require(:restriction).permit(:name
+                # restrictions_attributes: [
+                #     :name,
+                #     :id
+                # ]
             )
         end
 
