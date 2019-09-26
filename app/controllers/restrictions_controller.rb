@@ -25,7 +25,6 @@ class RestrictionsController < ApplicationController
     def create
         @client = Client.find(params[:client_id])
         @client.restrictions.build(restriction_params)
-        binding.pry
         if @client.save
             redirect_to @client
         else 
@@ -49,7 +48,6 @@ class RestrictionsController < ApplicationController
     def destroy
         @restriction = Restriction.find(params[:id])
         @restriction.destroy
-        #binding.pry
         redirect_to restrictions_path
       end
       
