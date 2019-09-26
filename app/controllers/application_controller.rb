@@ -17,8 +17,4 @@ class ApplicationController < ActionController::Base
       redirect_to(controller: 'sessions', action: 'new') unless logged_in?
     end
 
-    # def reset_session
-    #   @_request.reset_session
-    # end
-    
   end

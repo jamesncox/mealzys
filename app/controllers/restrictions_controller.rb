@@ -12,11 +12,7 @@ class RestrictionsController < ApplicationController
             @clients = Client.order(:name)
         end
     end
-
-    # def index
-    #     @restrictions = Restriction.all
-    # end
-
+    
     def new
         @client = Client.find(params[:client_id])
         @restriction = Restriction.new
@@ -53,12 +49,7 @@ class RestrictionsController < ApplicationController
       
     private
         def restriction_params
-            params.require(:restriction).permit(:name
-                # restrictions_attributes: [
-                #     :name,
-                #     :id
-                # ]
-            )
+            params.require(:restriction).permit(:name)
         end
 
         def require_login
