@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users
 
   # resources :clients, only [:show] do
-  #   resource :restrictions, only [:index, :create]
+  #   resource :restrictions, only [:show, :index]
   # end
 
   get '/recipes/search' => 'recipes#search'

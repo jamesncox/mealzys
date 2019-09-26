@@ -6,8 +6,16 @@ class RestrictionsController < ApplicationController
     end 
 
     def index
-        @restrictions = Restriction.all
+        if params[:client_id]
+            @restrictions = Client.find(params[:client_id]).restrictions
+        else
+            @clients = Client.order(:name)
+        end
     end
+
+    # def index
+    #     @restrictions = Restriction.all
+    # end
 
     def new
         @restriction = Restriction.new
