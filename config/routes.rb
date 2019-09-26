@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   resources :clients
   resources :users
 
+  # resources :clients, only [:show] do
+  #   resource :restrictions, only [:index, :create]
+  # end
+
   get '/recipes/search' => 'recipes#search'
 
   get '/login' => 'sessions#new'
@@ -15,7 +19,6 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   get 'auth/:provider/callback', to: 'sessions#googleAuth'
-  get '/auth/google_oauth2', to: 'sessions#googleAuth'
   get 'auth/failure', to: redirect('/')
 
   root 'welcome#home'

@@ -5,10 +5,6 @@ class ApplicationController < ActionController::Base
     before_action :current_user
     helper_method :current_user
 
-    # def authenticate
-    #   redirect_to :login unless user_signed_in?
-    # end
-  
     def current_user
       @user = (User.find_by(id: session[:user_id]) || User.new)
     end
@@ -20,4 +16,9 @@ class ApplicationController < ActionController::Base
     def require_logged_in
       redirect_to(controller: 'sessions', action: 'new') unless logged_in?
     end
+
+    def reset_session
+      @_request.reset_session
+    end
+    
   end
