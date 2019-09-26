@@ -29,4 +29,5 @@ class SessionsController < ApplicationController
       @user.google_refresh_token = refresh_token if refresh_token.present?
       redirect_to root_path
     end
+
 end
