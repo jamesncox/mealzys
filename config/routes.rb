@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-
-  #create a nested route
-
+  
   resources :ingredients
   resources :recipes
   resources :clients
